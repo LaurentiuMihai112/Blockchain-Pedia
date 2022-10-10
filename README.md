@@ -20,5 +20,5 @@ Contact : alinstefanursu@gmail.com
 
 Mihai Cristian-Laurentiu
 
-Contact : mihai.laurentiu24@yahoo.com
+Contact : mihai.laurentiu24.ml@gmail.com
 
