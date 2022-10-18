@@ -2,6 +2,8 @@
 
 State of the Art: https://docs.google.com/document/d/1a5bd_QrEQi9IooDOwWSxUzOzHLbgofyCUUbkv7_vVBo/edit#heading=h.bbaa7759cydt
 
+Class Diagram can be found [HERE](./docs/class-diagram.png)
+
 <h3>Coordinator: Irimia Cosmin-Iulian</h3>
 
 Contact: irimia.cosmin@gmail.com
