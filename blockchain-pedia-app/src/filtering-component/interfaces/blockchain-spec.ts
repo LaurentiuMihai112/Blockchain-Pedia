@@ -1,0 +1,3 @@
+interface BlockchainSpec {
+    isSatisfied(): boolean
+}
