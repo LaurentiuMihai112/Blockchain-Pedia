@@ -1,5 +1,5 @@
-class TransactionSpec implements BlockchainSpec{
-    private category:BlockchainCategory;
+class TransactionSpec implements BlockchainSpec {
+    private category: BlockchainCategory;
 
     constructor(category: BlockchainCategory) {
         this.category = category;

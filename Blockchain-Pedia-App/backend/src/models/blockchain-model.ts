@@ -1,14 +1,16 @@
 class BlockchainModel {
     private _name: string;
     private _baseUrl: string;
-    private _category: string;
-    private _transactionCount: string;
-    private _powerConsumption: string;
-    private _pricePerTransaction: string;
-    private _marketCap: string;
+    private _category: BlockchainCategory;
+    private _transactionCount: number;
+    private _powerConsumption: number;
+    private _pricePerTransaction: number;
+    private _marketCap: number;
 
 
-    constructor(name: string, baseUrl: string, category: string, transactionCount: string, powerConsumption: string, pricePerTransaction: string, marketCap: string) {
+    constructor(name: string = 'Default-Blockchain', baseUrl: string = 'baseUrl',
+                category: BlockchainCategory = BlockchainCategory.PUBLIC, transactionCount: number = 0,
+                powerConsumption: number = 0, pricePerTransaction: number = 0, marketCap: number = 0) {
         this._name = name;
         this._baseUrl = baseUrl;
         this._category = category;
@@ -17,7 +19,6 @@ class BlockchainModel {
         this._pricePerTransaction = pricePerTransaction;
         this._marketCap = marketCap;
     }
-
 
     get name(): string {
         return this._name;
@@ -35,43 +36,43 @@ class BlockchainModel {
         this._baseUrl = value;
     }
 
-    get category(): string {
+    get category(): BlockchainCategory {
         return this._category;
     }
 
-    set category(value: string) {
+    set category(value: BlockchainCategory) {
         this._category = value;
     }
 
-    get transactionCount(): string {
+    get transactionCount(): number {
         return this._transactionCount;
     }
 
-    set transactionCount(value: string) {
+    set transactionCount(value: number) {
         this._transactionCount = value;
     }
 
-    get powerConsumption(): string {
+    get powerConsumption(): number {
         return this._powerConsumption;
     }
 
-    set powerConsumption(value: string) {
+    set powerConsumption(value: number) {
         this._powerConsumption = value;
     }
 
-    get pricePerTransaction(): string {
+    get pricePerTransaction(): number {
         return this._pricePerTransaction;
     }
 
-    set pricePerTransaction(value: string) {
+    set pricePerTransaction(value: number) {
         this._pricePerTransaction = value;
     }
 
-    get marketCap(): string {
+    get marketCap(): number {
         return this._marketCap;
     }
 
-    set marketCap(value: string) {
+    set marketCap(value: number) {
         this._marketCap = value;
     }
 }

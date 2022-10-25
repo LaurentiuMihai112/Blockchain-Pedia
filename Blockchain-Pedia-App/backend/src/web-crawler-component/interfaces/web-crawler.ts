@@ -1,0 +1,4 @@
+interface WebCrawler {
+    crawl(): BlockchainModel
+
+}

@@ -1,5 +1,5 @@
 class MarketCapSpec implements BlockchainSpec {
-    private category:BlockchainCategory;
+    private category: BlockchainCategory;
 
     constructor(category: BlockchainCategory) {
         this.category = category;
