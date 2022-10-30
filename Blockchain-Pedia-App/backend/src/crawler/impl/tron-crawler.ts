@@ -1,8 +1,9 @@
 import {BlockchainModel} from "../../model/blockchain-model";
 import {BlockchainModelBuilder} from "../../model/blockchain-model-builder";
+import {WebCrawler} from "../web-crawler";
 
-class TronCrawler implements WebCrawler {
-    crawl(): BlockchainModel {
+export class TronCrawler implements WebCrawler {
+    async crawl(): Promise<BlockchainModel> {
         return new BlockchainModelBuilder().build()
     }
 

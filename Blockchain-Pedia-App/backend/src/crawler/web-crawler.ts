@@ -1,5 +1,5 @@
 import {BlockchainModel} from "../model/blockchain-model";
 
-interface WebCrawler {
-    crawl(): BlockchainModel
+export interface WebCrawler {
+    crawl(): Promise<BlockchainModel>
 }

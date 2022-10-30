@@ -1,4 +1,5 @@
 import {BlockchainModel} from "./blockchain-model";
+import {BlockchainCategory} from "./enum/blockchain-category";
 
 export class BlockchainModelBuilder {
     private _name: string = ""
