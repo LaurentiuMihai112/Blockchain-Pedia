@@ -1,10 +1,12 @@
 import {CoinGeckoApi} from "../api/coingecko-api";
 import mocked = jest.mocked;
-import {CardanoCrawler} from "./cardano-crawler";
+import {TronCrawler} from "./tron-crawler";
 import {HttpJsonResponse} from "../http/http-json-response";
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
 import {BlockchainModel} from "../../model/blockchain-model";
-import {cardanoCrawlerJsonResponseFailPath, cardanoCrawlerJsonResponseHappyPath} from "./__mocks__/mock-constants";
+import {
+    tronCrawlerJsonResponseFailPath, tronCrawlerJsonResponseHappyPath
+} from "./__mocks__/mock-constants";
 
 jest.mock('../api/coingecko-api.ts', () => {
     return {
@@ -17,48 +19,48 @@ jest.mock('../api/coingecko-api.ts', () => {
     }
 })
 
-describe('Cardano Crawler Tests', () => {
+describe('Tron Crawler Tests', () => {
     const MockedCoinGeckoApi = mocked(CoinGeckoApi, {shallow: true})
 
     beforeEach(() => {
         MockedCoinGeckoApi.mockClear()
     })
 
-    it("When API returns 200, then return BlockchainModel", async () => {
+    it("API response: 200, then return BlockchainModel", async () => {
         // Given
         // @ts-ignore
         MockedCoinGeckoApi.getCoinCurrentData = (coinId: string) => {
-            return new HttpJsonResponse(200, cardanoCrawlerJsonResponseHappyPath)
+            return new HttpJsonResponse(200, tronCrawlerJsonResponseHappyPath)
         }
 
         // When
         // @ts-ignore
-        const cardanoCrawler = new CardanoCrawler(MockedCoinGeckoApi)
-        let response: BlockchainModel = await cardanoCrawler.crawl()
+        const tronCrawler = new TronCrawler(MockedCoinGeckoApi)
+        let response: BlockchainModel = await tronCrawler.crawl()
 
         // Then
-        expect(response.name).toEqual("Cardano")
-        expect(response.baseUrl).toEqual("https://cardano.org/")
+        expect(response.name).toEqual("TRON")
+        expect(response.baseUrl).toEqual("https://tron.network/")
         expect(response.category).toEqual(BlockchainCategory.PUBLIC)
-        expect(response.transactionCount).toEqual(35045020830.3234)
-        expect(response.powerConsumption).toEqual(6000)
-        expect(response.pricePerTransaction).toEqual(0.412092)
-        expect(response.marketCap).toEqual(14418981692)
+        expect(response.transactionCount).toEqual(92258746339.0195)
+        expect(response.powerConsumption).toEqual(0.1629)
+        expect(response.pricePerTransaction).toEqual(0.062974)
+        expect(response.marketCap).toEqual(5809764736)
     })
 
-    it("When API returns 404 Not Found, then throw exception", async () => {
+    it("API response: 404, then throw exception", async () => {
         // Given
         // @ts-ignore
         MockedCoinGeckoApi.getCoinCurrentData = (coinId: string) => {
-            return new HttpJsonResponse(404, cardanoCrawlerJsonResponseFailPath)
+            return new HttpJsonResponse(404, tronCrawlerJsonResponseFailPath)
         }
 
         // When & Then
         // @ts-ignore
-        const cardanoCrawler = new CardanoCrawler(MockedCoinGeckoApi)
+        const tronCrawler = new TronCrawler(MockedCoinGeckoApi)
         let errorHasBeenThrown: boolean = false;
         try {
-            await cardanoCrawler.crawl()
+            await tronCrawler.crawl()
             errorHasBeenThrown = false;
         } catch (error) {
             errorHasBeenThrown = true;
@@ -67,19 +69,19 @@ describe('Cardano Crawler Tests', () => {
         expect(errorHasBeenThrown).toEqual(true)
     })
 
-    it("When API returns 429 Too Many Requests, then throw exception", async () => {
+    it("API response: 429, then throw exception", async () => {
         // Given
         // @ts-ignore
         MockedCoinGeckoApi.getCoinCurrentData = (coinId: string) => {
-            return new HttpJsonResponse(429, cardanoCrawlerJsonResponseFailPath)
+            return new HttpJsonResponse(429, tronCrawlerJsonResponseFailPath)
         }
 
         // When & Then
         // @ts-ignore
-        const cardanoCrawler = new CardanoCrawler(MockedCoinGeckoApi)
+        const tronCrawler = new TronCrawler(MockedCoinGeckoApi)
         let errorHasBeenThrown: boolean = false;
         try {
-            await cardanoCrawler.crawl()
+            await tronCrawler.crawl()
             errorHasBeenThrown = false;
         } catch (Error) {
             errorHasBeenThrown = true;

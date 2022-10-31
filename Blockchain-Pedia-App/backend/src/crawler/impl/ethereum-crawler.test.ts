@@ -7,7 +7,7 @@ import {BlockchainModel} from "../../model/blockchain-model";
 import {
     ethereumCrawlerJsonResponseFailPath,
     ethereumCrawlerJsonResponseHappyPath
-} from "./__mocks__/mock-constants.test";
+} from "./__mocks__/mock-constants";
 
 jest.mock('../api/coingecko-api.ts', () => {
     return {
