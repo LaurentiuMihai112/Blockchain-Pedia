@@ -1,13 +1,12 @@
 import {BlockchainModel} from "../model/blockchain-model";
-import {AscendingComparator} from "./ascending-comparator";
-import {DescendingComparator} from "./descending-comparator";
+import {BlockchainModelComparator} from "./blockchain-model-comparator";
 
-class BlockchainSorter {
-    public sortAscending(blockchainList: BlockchainModel[], comparator: AscendingComparator): BlockchainModel[] {
-        return blockchainList
+export class BlockchainSorter {
+    public sortAscending(blockchainList: BlockchainModel[], comparator: BlockchainModelComparator): BlockchainModel[] {
+        return blockchainList.sort((a, b) => comparator.compare(a, b))
     }
 
-    public sortDescending(blockchainList: BlockchainModel[], comparator: DescendingComparator): BlockchainModel[] {
-        return blockchainList
+    public sortDescending(blockchainList: BlockchainModel[], comparator: BlockchainModelComparator): BlockchainModel[] {
+        return this.sortAscending(blockchainList, comparator).reverse()
     }
 }

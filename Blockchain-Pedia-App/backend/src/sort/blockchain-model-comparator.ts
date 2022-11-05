@@ -1,5 +1,5 @@
 import {BlockchainModel} from "../model/blockchain-model";
 
-export interface DescendingComparator {
+export interface BlockchainModelComparator {
     compare(blockchainOne: BlockchainModel, blockchainTwo: BlockchainModel): number
 }
