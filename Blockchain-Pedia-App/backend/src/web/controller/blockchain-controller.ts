@@ -11,6 +11,12 @@ export class BlockchainController {
     };
 
     public static getAllEntities = (req: Request, res: Response, next: NextFunction): object => {
-        return Object;
+        return BlockchainService.findAll();
+    }
+
+    public static getAllBlockchains = (req: Request, res: Response, next: NextFunction): void => {
+        let blockchains = "ETH"
+        res.setHeader('Content-Type', 'text/plain');
+        res.send(blockchains);
     }
 }

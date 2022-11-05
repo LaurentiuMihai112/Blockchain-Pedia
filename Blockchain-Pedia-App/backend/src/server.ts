@@ -1,5 +1,6 @@
 import express, {Express} from 'express';
 import {Endpoints} from "./web/endpoints";
+import routes from "./web/routes"
 import {ErrorHandlerMiddleware} from "./web/middleware/error-handler-middleware";
 import {BlockchainController} from "./web/controller/blockchain-controller";
 import morgan from 'morgan';
@@ -17,11 +18,13 @@ app.use(express.json());
 app.set('json spaces', 4);
 
 // Register API routes
-app.get(Endpoints.DEFAULT, BlockchainController.hello);
+//app.get(Endpoints.BLOCKCHAINS, BlockchainController.hello);
 
 // Error Handling middleware
 app.use(ErrorHandlerMiddleware.handleError);
 
 app.listen(port, () => {
     console.log('⚡️[server]: Server is running at http://localhost:' + `${port}`);
+
+    routes(app);
 });
