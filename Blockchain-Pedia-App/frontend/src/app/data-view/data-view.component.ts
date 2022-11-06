@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import axios, {AxiosRequestConfig} from "axios";
 import {BlockchainDTO} from "../dto/BlockchainDTO";
 import {Routes} from "../dto/routes";
+import {BlockchainCategory} from "../dto/enum/BlockchainCategory";
 
 @Component({
   selector: 'app-data-view',
@@ -32,5 +33,16 @@ export class DataViewComponent implements OnInit {
       })
       .catch();
 
+  }
+
+  public formatCategory(category: BlockchainCategory) {
+    switch (category) {
+      case BlockchainCategory.HYBRID:
+        return "Hybrid"
+      case BlockchainCategory.PRIVATE:
+        return "Private"
+      case BlockchainCategory.PUBLIC:
+        return "Public"
+    }
   }
 }

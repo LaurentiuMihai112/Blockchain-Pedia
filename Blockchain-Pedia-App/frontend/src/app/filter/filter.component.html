@@ -1,0 +1,69 @@
+<div class="flex flex-row gap-2 pl-1">
+  <!-- The div containing the selected value and an icon to visually indicate if the dropdown is open or closed -->
+  <div class="flex justify-center items-center">
+    <div
+      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
+      Category
+    </div>
+  </div>
+  <div class="relative">
+    <div (click)="toggleCategory() "
+         class="relative w-fit px-4 py-2 border border-1 border-neutral-400 rounded-md
+         flex justify-center items-center cursor-pointer bg-gray-200">
+      <div class="mr-2">
+        {{selectedCategory}}
+      </div>
+      <div>
+        <svg *ngIf="!showCategories" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+        <svg *ngIf="showCategories" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+    <!-- The div containing the available items -->
+    <div *ngIf="showCategories"
+         class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
+      <div (click)="selectCategory(category)" *ngFor="let category of categories"
+           class="py-2 px-4 w-full hover:bg-neutral-100">
+        {{ category }}
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center items-center">
+    <div
+      class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
+      Tr. Count
+    </div>
+  </div>
+  <div class="relative">
+    <div (click)="toggleTrCount() "
+         class="relative w-fit px-4 py-2 border border-1 border-neutral-400 rounded-md
+         flex justify-center items-center cursor-pointer bg-gray-200">
+      <div class="mr-2">
+        {{selectedTrCount}}
+      </div>
+      <div>
+        <svg *ngIf="!showTrCount" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+        <svg *ngIf="showTrCount" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+    <!-- The div containing the available items -->
+    <div *ngIf="showTrCount"
+         class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
+      <div (click)="selectTrCount(trCount)" *ngFor="let trCount of transactionCounts"
+           class="py-2 px-4 w-full hover:bg-neutral-100">
+        {{ trCount }}
+      </div>
+    </div>
+  </div>
+</div>

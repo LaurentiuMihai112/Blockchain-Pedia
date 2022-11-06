@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { DataViewComponent } from './data-view/data-view.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DataViewComponent } from './data-view/data-view.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    DataViewComponent
+    DataViewComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
