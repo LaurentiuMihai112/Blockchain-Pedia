@@ -1,0 +1,26 @@
+<div class="overflow-x-auto relative p-10">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-2xl">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr>
+      <th scope="col" class="py-3 px-6">Name</th>
+      <th scope="col" class="py-3 px-6">Url</th>
+      <th scope="col" class="py-3 px-6">Category</th>
+      <th scope="col" class="py-3 px-6">Transaction Count</th>
+      <th scope="col" class="py-3 px-6">Power Consumption</th>
+      <th scope="col" class="py-3 px-6">Price / Tr</th>
+      <th scope="col" class="py-3 px-6">Market Cap</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let blockchain of blockchainList;" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      <td class="py-4 px-6">{{blockchain._name}}</td>
+      <td class="py-4 px-6"><a class="" href="{{blockchain._baseUrl}}">{{blockchain._baseUrl}}</a></td>
+      <td class="py-4 px-6">{{blockchain._category}}</td>
+      <td class="py-4 px-6">{{blockchain._transactionCount}}</td>
+      <td class="py-4 px-6">{{blockchain._powerConsumption}}</td>
+      <td class="py-4 px-6">{{blockchain._pricePerTransaction}}</td>
+      <td class="py-4 px-6">{{blockchain._marketCap}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

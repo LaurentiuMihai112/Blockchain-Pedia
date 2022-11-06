@@ -30,7 +30,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "rxjs-compat",
+              "form-data"
+            ]
           },
           "configurations": {
             "production": {

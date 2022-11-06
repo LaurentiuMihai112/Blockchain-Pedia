@@ -13,6 +13,10 @@ const port = 8000;
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+const cors = require('cors');
+app.use(cors({
+    origin: 'http://localhost:4200'
+}));
 app.set('json spaces', 4);
 
 // Error Handling middleware
