@@ -8,7 +8,7 @@ import {
 import {MarketCapSpec} from "./impl/market-cap-spec";
 import {CategorySpec} from "./impl/category-spec";
 import {BlockchainModel} from "../model/blockchain-model";
-import {TransactionSpec} from "./impl/transaction-spec";
+import {TransactionCountSpec} from "./impl/transaction-count-spec";
 import {BlockchainCategory} from "../model/enum/blockchain-category";
 import {PricePerTransactionSpec} from "./impl/price-per-transaction-spec";
 import {BlockchainFilter} from "./blockchain-filter";
@@ -64,7 +64,7 @@ describe('Blockchain Filter Tests', () => {
 
     it("Transaction Count Test",  () => {
         // Given
-        let blockchainSpec = new TransactionSpec(0,1000000000)
+        let blockchainSpec = new TransactionCountSpec(0,1000000000)
         let spec = new BlockchainFilter()
 
         let blockchainModelArr = mockedBlockchainArray

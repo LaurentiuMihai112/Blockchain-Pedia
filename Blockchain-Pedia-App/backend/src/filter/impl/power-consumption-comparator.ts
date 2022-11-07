@@ -1,8 +1,7 @@
-import {BlockchainCategory} from "../../model/enum/blockchain-category";
 import {BlockchainSpec} from "../blockchain-spec";
 import {BlockchainModel} from "../../model/blockchain-model";
 
-export class TransactionSpec implements BlockchainSpec {
+export class PowerConsumptionSpec implements BlockchainSpec {
     private minValue: number;
     private maxValue: number;
 
@@ -12,7 +11,7 @@ export class TransactionSpec implements BlockchainSpec {
     }
 
     isSatisfied(blockchain: BlockchainModel): boolean {
-        return blockchain.transactionCount >= this.minValue && blockchain.transactionCount <= this.maxValue;
+        return blockchain.powerConsumption >= this.minValue && blockchain.powerConsumption <= this.maxValue;
     }
 
 }

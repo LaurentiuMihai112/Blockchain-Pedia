@@ -1,7 +1,7 @@
 import {BlockchainSpec} from "../blockchain-spec";
 import {BlockchainModel} from "../../model/blockchain-model";
 
-export class PricePerTransactionSpec implements BlockchainSpec {
+export class TransactionCountSpec implements BlockchainSpec {
     private minValue: number;
     private maxValue: number;
 
@@ -11,7 +11,7 @@ export class PricePerTransactionSpec implements BlockchainSpec {
     }
 
     isSatisfied(blockchain: BlockchainModel): boolean {
-        return blockchain.pricePerTransaction >= this.minValue && blockchain.pricePerTransaction <= this.maxValue;
+        return blockchain.transactionCount >= this.minValue && blockchain.transactionCount <= this.maxValue;
     }
 
 }
