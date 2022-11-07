@@ -1,3 +1,5 @@
+import {BlockchainCategory} from "../../model/enum/blockchain-category";
+
 class PricePerTransactionSpec implements BlockchainSpec {
     private category: BlockchainCategory;
 
