@@ -1,10 +1,14 @@
 <div class="flex flex-row gap-3 px-1 filter">
-<!--  category-->
-  <div class="flex justify-center items-center">
+  <!--  Category-->
+  <div (click)="categoryAscending" class="flex justify-center items-center bg-cyan-200 rounded pr-1">
     <div
       class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
       Category
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+         stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
   </div>
   <div class="relative">
     <div (click)="toggleCategory() "
@@ -24,7 +28,6 @@
         </svg>
       </div>
     </div>
-    <!-- The div containing the available items -->
     <div *ngIf="showCategories"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
       <div (click)="selectCategory(category)" *ngFor="let category of categories"
@@ -33,12 +36,16 @@
       </div>
     </div>
   </div>
-<!--  Transaction count-->
-  <div class="flex justify-center items-center">
+  <!--  Transaction count-->
+  <div class="flex justify-center items-center bg-cyan-200 rounded pr-1">
     <div
       class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
       Transaction Count
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+         stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
   </div>
   <div class="relative">
     <div (click)="toggleTrCount() "
@@ -58,7 +65,6 @@
         </svg>
       </div>
     </div>
-    <!-- The div containing the available items -->
     <div *ngIf="showTrCount"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
       <div (click)="selectTrCount(trCount)" *ngFor="let trCount of transactionCounts"
@@ -67,12 +73,16 @@
       </div>
     </div>
   </div>
-<!--  Power Consumption-->
-  <div class="flex justify-center items-center">
+  <!--  Power Consumption-->
+  <div class="flex justify-center items-center bg-cyan-200 rounded pr-1">
     <div
       class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
       Power Consumption
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+         stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
   </div>
   <div class="relative">
     <div (click)="togglePowerConsumption() "
@@ -82,17 +92,18 @@
         {{selectedPowerConsumption}}
       </div>
       <div>
-        <svg *ngIf="!showPowerConsumption" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+        <svg *ngIf="!showPowerConsumption" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+             viewBox="0 0 24 24"
              stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
         </svg>
-        <svg *ngIf="showPowerConsumption" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+        <svg *ngIf="showPowerConsumption" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+             viewBox="0 0 24 24"
              stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
       </div>
     </div>
-    <!-- The div containing the available items -->
     <div *ngIf="showPowerConsumption"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
       <div (click)="selectPowerConsumption(powerConsumption)" *ngFor="let powerConsumption of powerConsumptions"
@@ -101,12 +112,16 @@
       </div>
     </div>
   </div>
-<!--  Price / Transaction-->
-  <div class="flex justify-center items-center">
+  <!--  Price / Transaction-->
+  <div class="flex justify-center items-center bg-cyan-200 rounded pr-1">
     <div
       class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
       Price / Transaction
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+         stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
   </div>
   <div class="relative">
     <div (click)="togglePricePerTr() "
@@ -126,7 +141,6 @@
         </svg>
       </div>
     </div>
-    <!-- The div containing the available items -->
     <div *ngIf="showPricePerTr"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
       <div (click)="selectPricePerTr(pricePerTr)" *ngFor="let pricePerTr of pricePerTrs"
@@ -135,12 +149,16 @@
       </div>
     </div>
   </div>
-<!--  Market Cap-->
-  <div class="flex justify-center items-center">
+  <!--  Market Cap-->
+  <div class="flex justify-center items-center bg-cyan-200 rounded pr-1">
     <div
       class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-cyan-600 bg-cyan-200 uppercase last:mr-0 mr-1">
       Market Cap
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+         stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
   </div>
   <div class="relative">
     <div (click)="toggleMarketCap() "
@@ -160,7 +178,6 @@
         </svg>
       </div>
     </div>
-    <!-- The div containing the available items -->
     <div *ngIf="showMarketCap"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
       <div (click)="selectMarketCap(marketCap)" *ngFor="let marketCap of marketCaps"
@@ -169,4 +186,7 @@
       </div>
     </div>
   </div>
+  <button (click)="updateBlockchainList()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Apply Filters
+  </button>
 </div>

@@ -21,6 +21,11 @@ export class FilterComponent implements OnInit {
   selectedPowerConsumption: string;
   selectedPricePerTr: string;
   selectedMarketCap: string;
+  categoryAscending: boolean;
+  trCountAscending: boolean;
+  powerConsumptionAscending: boolean;
+  pricePerTrAscending: boolean;
+  marketCapAscending: boolean;
 
   constructor() {
     this.showCategories = false
@@ -33,6 +38,11 @@ export class FilterComponent implements OnInit {
     this.selectedPowerConsumption = this.powerConsumptions[0]
     this.selectedPricePerTr = this.pricePerTrs[0]
     this.selectedMarketCap = this.marketCaps[0]
+    this.categoryAscending = false
+    this.trCountAscending = false
+    this.powerConsumptionAscending = false
+    this.pricePerTrAscending = false
+    this.marketCapAscending = false
   }
 
   ngOnInit(): void {
@@ -83,4 +93,7 @@ export class FilterComponent implements OnInit {
     this.toggleMarketCap()
   }
 
+  updateBlockchainList() {
+
+  }
 }
