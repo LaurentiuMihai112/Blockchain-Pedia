@@ -1,6 +1,8 @@
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
+import {BlockchainModel} from "../../model/blockchain-model";
+import {BlockchainSpec} from "../blockchain-spec";
 
-class CategorySpec implements BlockchainSpec {
+export class CategorySpec implements BlockchainSpec {
     private category: BlockchainCategory;
 
 
@@ -8,8 +10,8 @@ class CategorySpec implements BlockchainSpec {
         this.category = category;
     }
 
-    isSatisfied(): boolean {
-        return false;
+    isSatisfied(blockchain: BlockchainModel): boolean {
+        return blockchain.category == this.category;
     }
 
 

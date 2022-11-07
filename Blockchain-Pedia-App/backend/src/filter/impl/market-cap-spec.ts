@@ -1,14 +1,18 @@
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
+import {BlockchainSpec} from "../blockchain-spec";
+import {BlockchainModel} from "../../model/blockchain-model";
 
-class MarketCapSpec implements BlockchainSpec {
-    private category: BlockchainCategory;
+export class MarketCapSpec implements BlockchainSpec {
+    private minValue: number;
+    private maxValue: number;
 
-    constructor(category: BlockchainCategory) {
-        this.category = category;
+    constructor(minValue: number, maxValue: number) {
+        this.minValue=minValue;
+        this.maxValue=maxValue;
     }
 
-    isSatisfied(): boolean {
-        return false;
+    isSatisfied(blockchain: BlockchainModel): boolean {
+        return blockchain.marketCap >= this.minValue && blockchain.marketCap <=this.maxValue;
     }
 
 }
