@@ -14,7 +14,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let blockchain of blockchainList;" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      <tr *ngFor="let blockchain of blockchainList;"
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
         <td class="py-4 px-6">{{blockchain._name}}</td>
         <td class="py-4 px-6"><a class="" href="{{blockchain._baseUrl}}">{{blockchain._baseUrl}}</a></td>
         <td class="py-4 px-6">{{this.formatCategory(blockchain._category)}}</td>
