@@ -12,11 +12,16 @@ import {BlockchainCategory} from "../dto/enum/BlockchainCategory";
 export class DataViewComponent implements OnInit {
   config: AxiosRequestConfig
   blockchainList: BlockchainDTO[] = []
+  requestError: boolean
+  error: String = ''
 
   constructor() {
+    this.requestError = false
     this.config = {
       headers: {},
-      params: {}
+      params: {
+
+      }
     }
     this.getAllBlockchains()
   }
@@ -28,10 +33,14 @@ export class DataViewComponent implements OnInit {
 
     axios.get(Routes.makePath(Routes.BLOCKCHAINS_ENDPOINT), this.config)
       .then(response => {
-        console.dir(response.data)
+        console.dir(response)
         this.blockchainList = response.data;
       })
-      .catch();
+      .catch((e) => {
+        this.requestError = true
+        this.error = e.response.statusText
+        console.log(e)
+      });
 
   }
 
