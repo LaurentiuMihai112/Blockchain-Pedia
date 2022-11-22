@@ -3,3 +3,5 @@ package-lock.json
 .idea
 .vscode
 .env
+
+out_*.png
