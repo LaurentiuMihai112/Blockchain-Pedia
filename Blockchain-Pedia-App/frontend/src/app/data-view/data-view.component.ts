@@ -1,8 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import axios, {AxiosRequestConfig} from "axios";
 import {BlockchainDTO} from "../dto/BlockchainDTO";
+import {BlockchainModel} from "../../../../backend/src/model/blockchain-model"
 import {Routes} from "../dto/routes";
 import {BlockchainCategory} from "../dto/enum/BlockchainCategory";
+import {BlockchainSorter} from "../../../../backend/src/sort/blockchain-sorter"
+import {MarketCapComparator} from "../../../../backend/src/sort/impl/market-cap-comparator"
+import {PowerConsumptionComparator} from "../../../../backend/src/sort/impl/power-consumption-comparator"
+import {PricePerTransactionComparator} from "../../../../backend/src/sort/impl/price-per-transaction-comparator"
+import {TransactionCountComparator} from "../../../../backend/src/sort/impl/transaction-count-comparator"
+import {SorterService} from "../../sorter.service";
 
 @Component({
   selector: 'app-data-view',
@@ -14,8 +21,16 @@ export class DataViewComponent implements OnInit {
   blockchainList: BlockchainDTO[] = []
   requestError: boolean
   error: String = ''
+  blockchainModel: BlockchainModel[] = []
+  comparatorMarket: MarketCapComparator = new MarketCapComparator()
+  comparatorPower: PowerConsumptionComparator=new PowerConsumptionComparator()
+  comparatorPrice: PricePerTransactionComparator = new PricePerTransactionComparator()
+  comparatorTransaction: TransactionCountComparator = new TransactionCountComparator()
+  sorter: BlockchainSorter = new BlockchainSorter()
+  blockchainListSortedAscending: BlockchainDTO[] = []
+  blockchainListSortedDescending: BlockchainDTO[] = []
 
-  constructor() {
+  constructor(private sorterService: SorterService) {
     this.requestError = false
     this.config = {
       headers: {},
@@ -43,6 +58,12 @@ export class DataViewComponent implements OnInit {
       });
 
   }
+  private createBlockchainModel(blockchains: BlockchainDTO[]){
+    for (let blockchain of blockchains){
+      var block =new BlockchainModel(blockchain._name,blockchain._baseUrl,blockchain._category,blockchain._transactionCount,blockchain._powerConsumption,blockchain._pricePerTransaction,blockchain._marketCap)
+      this.blockchainModel.push(block)
+    }
+  }
 
   public formatCategory(category: BlockchainCategory) {
     switch (category) {
@@ -53,5 +74,9 @@ export class DataViewComponent implements OnInit {
       case BlockchainCategory.PUBLIC:
         return "Public"
     }
+  }
+
+  static sortAscend(category: string) {
+   DataViewComponent.sortAscending(category)
   }
 }
