@@ -2,51 +2,56 @@
   <!--  Category-->
   <div class="relativ flex justify-center items-center bg-red-200 rounded ">
     <div
-      (click)="toggleCategorySorter()"
+      (click)="this.filterService.toggleCategorySorter()"
       class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
       Category
     </div>
     <div>
-      <svg *ngIf="!showCategoriesSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      <svg *ngIf="!this.filterService.showCategoriesSorter" class="h-4 w-4" fill="none"
+           stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <svg *ngIf="showCategoriesSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 9-7-7"/>
+      <svg *ngIf="this.filterService.showCategoriesSorter" class="h-4 w-4" fill="none"
+           stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 9l-7 9-7-7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <div *ngIf="showCategoriesSorter"
+    <div *ngIf="this.filterService.showCategoriesSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="selectPowerSorter(category)" *ngFor="let category of sorterCategory"
+      <div (click)="this.filterService.selectPowerSorter(category)"
+           *ngFor="let category of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ category }}
       </div>
     </div>
   </div>
   <div class="relative">
-    <div (click)="toggleCategory() "
+    <div (click)="this.filterService.toggleCategory() "
          class="relative w-fit px-4 py-2 border border-1 border-neutral-400 rounded-md
          flex justify-center items-center cursor-pointer bg-gray-200">
       <div class="mr-2">
-        {{selectedCategory}}
+        {{this.filterService.selectedCategory}}
       </div>
       <div>
-        <svg *ngIf="!showCategories" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        <svg *ngIf="!this.filterService.showCategories" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <svg *ngIf="showCategories" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        <svg *ngIf="this.filterService.showCategories" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
-    <div *ngIf="showCategories"
+    <div *ngIf="this.filterService.showCategories"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
-      <div (click)="selectCategory(category)" *ngFor="let category of categories"
+      <div (click)="this.filterService.selectCategory(category)" *ngFor="let category of this.filterService.categories"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ category }}
       </div>
@@ -55,51 +60,55 @@
   <!--  Transaction count-->
   <div class="relativ flex justify-center items-center bg-red-200 rounded ">
     <div
-      (click)="toggleTrSorter()"
+      (click)="this.filterService.toggleTrSorter()"
       class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
       Transaction count
     </div>
     <div>
-      <svg *ngIf="!showTrSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      <svg *ngIf="!this.filterService.showTrSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <svg *ngIf="showTrSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 9-7-7"/>
+      <svg *ngIf="this.filterService.showTrSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 9l-7 9-7-7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <div *ngIf="showTrSorter"
+    <div *ngIf="this.filterService.showTrSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="selectPowerSorter(trSorter)" *ngFor="let trSorter of sorterCategory"
+      <div (click)="this.filterService.selectPowerSorter(trSorter)"
+           *ngFor="let trSorter of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ trSorter }}
       </div>
     </div>
   </div>
   <div class="relative">
-    <div (click)="toggleTrCount() "
+    <div (click)="this.filterService.toggleTrCount() "
          class="relative w-fit px-4 py-2 border border-1 border-neutral-400 rounded-md
          flex justify-center items-center cursor-pointer bg-gray-200">
       <div class="mr-2">
-        {{selectedTrCount}}
+        {{this.filterService.selectedTrCount}}
       </div>
       <div>
-        <svg *ngIf="!showTrCount" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        <svg *ngIf="!this.filterService.showTrCount" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <svg *ngIf="showTrCount" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        <svg *ngIf="this.filterService.showTrCount" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
-    <div *ngIf="showTrCount"
+    <div *ngIf="this.filterService.showTrCount"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
-      <div (click)="selectTrCount(trCount)" *ngFor="let trCount of transactionCounts"
+      <div (click)="this.filterService.selectTrCount(trCount)"
+           *ngFor="let trCount of this.filterService.transactionCounts"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ trCount }}
       </div>
@@ -108,53 +117,57 @@
   <!--  Power Consumption-->
   <div class="relativ flex justify-center items-center bg-red-200 rounded ">
     <div
-      (click)="togglePowerSorter()"
+      (click)="this.filterService.togglePowerSorter()"
       class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
       Power Consumption
     </div>
     <div>
-      <svg *ngIf="!showPowerSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      <svg *ngIf="!this.filterService.showPowerSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <svg *ngIf="showPowerSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 9-7-7"/>
+      <svg *ngIf="this.filterService.showPowerSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 9l-7 9-7-7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <div *ngIf="showPowerSorter"
+    <div *ngIf="this.filterService.showPowerSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="selectPowerSorter(powerConsumptionSorting)" *ngFor="let powerConsumptionSorting of sorterCategory"
+      <div (click)="this.filterService.selectPowerSorter(powerConsumptionSorting)"
+           *ngFor="let powerConsumptionSorting of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ powerConsumptionSorting }}
       </div>
     </div>
   </div>
   <div class="relative">
-    <div (click)="togglePowerConsumption() "
+    <div (click)="this.filterService.togglePowerConsumption() "
          class="relative w-fit px-4 py-2 border border-1 border-neutral-400 rounded-md
          flex justify-center items-center cursor-pointer bg-gray-200">
       <div class="mr-2">
-        {{selectedPowerConsumption}}
+        {{this.filterService.selectedPowerConsumption}}
       </div>
       <div>
-        <svg *ngIf="!showPowerConsumption" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-             viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        <svg *ngIf="!this.filterService.showPowerConsumption" class="h-4 w-4" fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <svg *ngIf="showPowerConsumption" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-             viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        <svg *ngIf="this.filterService.showPowerConsumption" class="h-4 w-4" fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
-    <div *ngIf="showPowerConsumption"
+    <div *ngIf="this.filterService.showPowerConsumption"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
-      <div (click)="selectPowerConsumption(powerConsumption)" *ngFor="let powerConsumption of powerConsumptions"
+      <div (click)="this.filterService.selectPowerConsumption(powerConsumption)"
+           *ngFor="let powerConsumption of this.filterService.powerConsumptions"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ powerConsumption }}
       </div>
@@ -163,51 +176,54 @@
   <!--  Price / Transaction-->
   <div class="relativ flex justify-center items-center bg-red-200 rounded ">
     <div
-      (click)="togglePriceSorter()"
+      (click)="this.filterService.togglePriceSorter()"
       class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
       Price Transaction
     </div>
     <div>
-      <svg *ngIf="!showPriceSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      <svg *ngIf="!this.filterService.showPriceSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <svg *ngIf="showPriceSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 9-7-7"/>
+      <svg *ngIf="this.filterService.showPriceSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 9l-7 9-7-7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <div *ngIf="showPriceSorter"
+    <div *ngIf="this.filterService.showPriceSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="selectPowerSorter(price)" *ngFor="let price of sorterCategory"
+      <div (click)="this.filterService.selectPowerSorter(price)" *ngFor="let price of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ price }}
       </div>
     </div>
   </div>
   <div class="relative">
-    <div (click)="togglePricePerTr() "
+    <div (click)="this.filterService.togglePricePerTr() "
          class="relative w-fit px-4 py-2 border border-1 border-neutral-400 rounded-md
          flex justify-center items-center cursor-pointer bg-gray-200">
       <div class="mr-2">
-        {{selectedPricePerTr}}
+        {{this.filterService.selectedPricePerTr}}
       </div>
       <div>
-        <svg *ngIf="!showPricePerTr" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        <svg *ngIf="!this.filterService.showPricePerTr" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <svg *ngIf="showPricePerTr" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        <svg *ngIf="this.filterService.showPricePerTr" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
-    <div *ngIf="showPricePerTr"
+    <div *ngIf="this.filterService.showPricePerTr"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
-      <div (click)="selectPricePerTr(pricePerTr)" *ngFor="let pricePerTr of pricePerTrs"
+      <div (click)="this.filterService.selectPricePerTr(pricePerTr)"
+           *ngFor="let pricePerTr of this.filterService.pricePerTrs"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ pricePerTr }}
       </div>
@@ -216,57 +232,62 @@
   <!--  Market Cap-->
   <div class="relativ flex justify-center items-center bg-red-200 rounded ">
     <div
-      (click)="toggleMarketSorter()"
+      (click)="this.filterService.toggleMarketSorter()"
       class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
       Market Cap
     </div>
     <div>
-      <svg *ngIf="!showMarketSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+      <svg *ngIf="!this.filterService.showMarketSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <svg *ngIf="showMarketSorter" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-           viewBox="0 0 24 24"
-           stroke="#881337" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 9-7-7"/>
+      <svg *ngIf="this.filterService.showMarketSorter" class="h-4 w-4" fill="none" stroke="#881337"
+           stroke-width="2"
+           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 9l-7 9-7-7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </div>
-    <div *ngIf="showMarketSorter"
+    <div *ngIf="this.filterService.showMarketSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="selectPowerSorter(market)" *ngFor="let market of sorterCategory"
+      <div (click)="this.filterService.selectPowerSorter(market)"
+           *ngFor="let market of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ market }}
       </div>
     </div>
   </div>
   <div class="relative">
-    <div (click)="toggleMarketCap() "
+    <div (click)="this.filterService.toggleMarketCap() "
          class="relative w-fit px-4 py-2 border border-1 border-neutral-400 rounded-md
          flex justify-center items-center cursor-pointer bg-gray-200">
       <div class="mr-2">
-        {{selectedMarketCap}}
+        {{this.filterService.selectedMarketCap}}
       </div>
       <div>
-        <svg *ngIf="!showMarketCap" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        <svg *ngIf="!this.filterService.showMarketCap" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <svg *ngIf="showMarketCap" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        <svg *ngIf="this.filterService.showMarketCap" class="h-4 w-4" fill="none" stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
-    <div *ngIf="showMarketCap"
+    <div *ngIf="this.filterService.showMarketCap"
          class="absolute w-fit py-1 mt-2 border border-1 border-neutral-400 rounded-md cursor-pointer z-50 bg-gray-200">
-      <div (click)="selectMarketCap(marketCap)" *ngFor="let marketCap of marketCaps"
+      <div (click)="this.filterService.selectMarketCap(marketCap)"
+           *ngFor="let marketCap of this.filterService.marketCaps"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ marketCap }}
       </div>
     </div>
   </div>
-  <button (click)="updateBlockchainList()" class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+  <button (click)="this.filterService.updateBlockchainList()"
+          class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
     Apply Filters
   </button>
 </div>

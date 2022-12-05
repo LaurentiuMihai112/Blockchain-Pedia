@@ -4,21 +4,21 @@
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-2xl">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
-        <th scope="col" class="py-3 px-6">Name</th>
-        <th scope="col" class="py-3 px-6">Url</th>
-        <th scope="col" class="py-3 px-6">Category</th>
-        <th scope="col" class="py-3 px-6">Transaction Count</th>
-        <th scope="col" class="py-3 px-6">Power Consumption</th>
-        <th scope="col" class="py-3 px-6">Price / Tr</th>
-        <th scope="col" class="py-3 px-6">Market Cap</th>
+        <th class="py-3 px-6" scope="col">Name</th>
+        <th class="py-3 px-6" scope="col">Url</th>
+        <th class="py-3 px-6" scope="col">Category</th>
+        <th class="py-3 px-6" scope="col">Transaction Count</th>
+        <th class="py-3 px-6" scope="col">Power Consumption</th>
+        <th class="py-3 px-6" scope="col">Price / Tr</th>
+        <th class="py-3 px-6" scope="col">Market Cap</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let blockchain of blockchainList;"
+      <tr *ngFor="let blockchain of this.filterService.blockchainList;"
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
         <td class="py-4 px-6">{{blockchain._name}}</td>
         <td class="py-4 px-6"><a class="" href="{{blockchain._baseUrl}}">{{blockchain._baseUrl}}</a></td>
-        <td class="py-4 px-6">{{this.formatCategory(blockchain._category)}}</td>
+        <td class="py-4 px-6">{{this.filterService.formatCategory(blockchain._category)}}</td>
         <td class="py-4 px-6">{{blockchain._transactionCount}}</td>
         <td class="py-4 px-6">{{blockchain._powerConsumption}}</td>
         <td class="py-4 px-6">{{blockchain._pricePerTransaction}}</td>
@@ -26,8 +26,8 @@
       </tr>
       </tbody>
     </table>
-    <div *ngIf="requestError">
-      <p>{{error}}</p>
+    <div *ngIf="this.filterService.requestError">
+      <p>{{this.filterService.error}}</p>
     </div>
   </div>
 </div>
