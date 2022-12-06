@@ -22,7 +22,7 @@
     </div>
     <div *ngIf="this.filterService.showCategoriesSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="this.filterService.selectPowerSorter(category)"
+      <div (click)="this.filterService.selectCategorySorter(category)"
            *ngFor="let category of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ category }}
@@ -78,7 +78,7 @@
     </div>
     <div *ngIf="this.filterService.showTrSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="this.filterService.selectPowerSorter(trSorter)"
+      <div (click)="this.filterService.selectTrSorter(trSorter)"
            *ngFor="let trSorter of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ trSorter }}
@@ -194,7 +194,7 @@
     </div>
     <div *ngIf="this.filterService.showPriceSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="this.filterService.selectPowerSorter(price)" *ngFor="let price of this.filterService.sorterCategory"
+      <div (click)="this.filterService.selectPriceSorter(price)" *ngFor="let price of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ price }}
       </div>
@@ -250,7 +250,7 @@
     </div>
     <div *ngIf="this.filterService.showMarketSorter"
          class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
-      <div (click)="this.filterService.selectPowerSorter(market)"
+      <div (click)="this.filterService.selectMarketSorter(market)"
            *ngFor="let market of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ market }}
@@ -286,7 +286,7 @@
       </div>
     </div>
   </div>
-  <button (click)="this.filterService.updateBlockchainList()"
+  <button (click)="this.filterService.updateBlockchainList(this.filterService.selectedCategory,this.filterService.selectedTrCount,this.filterService.selectedPowerConsumption,this.filterService.selectedPricePerTr,this.filterService.selectedMarketCap, this.filterService.selectedCategorySorter,this.filterService.selectedTrSorter, this.filterService.selectedPowerConsumptionSorter,this.filterService.selectedPriceSorter,this.filterService.selectedMarketSorter)"
           class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
     Apply Filters
   </button>

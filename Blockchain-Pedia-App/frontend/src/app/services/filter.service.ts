@@ -3,17 +3,18 @@ import {BlockchainDTO} from "../dto/BlockchainDTO";
 import axios, {AxiosRequestConfig} from "axios";
 import {Routes} from "../dto/routes";
 import {BlockchainCategory} from "../dto/enum/BlockchainCategory";
+import {mark} from "@angular/compiler-cli/src/ngtsc/perf/src/clock";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn : 'root'
 })
 export class FilterService {
 
   constructor() {
     this._requestError = false
     this._config = {
-      headers: {},
-      params: {}
+      headers : {},
+      params : {}
     }
     this.getAllBlockchains()
     this._showCategories = false
@@ -36,14 +37,42 @@ export class FilterService {
     this._selectedPriceSorter = this._sorterCategory[0]
     this._selectedMarketCap = this._marketCaps[0]
     this._selectedMarketSorter = this._sorterCategory[0]
-    this._categoryAscending = false
-    this._trCountAscending = false
-    this._powerConsumptionAscending = false
-    this._pricePerTrAscending = false
-    this._marketCapAscending = false
+    this.selectedFilter = this.filterCategory[0]
+    this.selectedOrder = ''
+    this.selectedSorterField = this.sorterCategoryField[0]
+    this.minimumValue = 0
+    this.maximumValue = 9999999999999
   }
 
+  private selectedFilter: string;
+  private selectedSorterField: string;
+  private selectedOrder: string;
+  private minimumValue: number;
+  private maximumValue: number;
+
   private _config: AxiosRequestConfig
+  private _requestError: boolean
+  private _error: String = ''
+  private _blockchainList: BlockchainDTO[] = []
+  private _showCategories: boolean;
+  private _showCategoriesSorter: boolean;
+  private _showTrCount: boolean;
+  private _showPowerConsumption: boolean;
+  private _showTrSorter: boolean;
+  private _showPriceSorter: boolean;
+  private _showPowerSorter: boolean;
+  private _showPricePerTr: boolean;
+  private _showMarketCap: boolean;
+  private _showMarketSorter: boolean;
+  private filterCategory = ['marketCap', 'powerConsumption', 'pricePerTransaction', 'transactionCount'];
+  private sorterCategoryField = ['marketCap', 'powerConsumption', 'pricePerTransaction', 'transactionCount'];
+  private _sorterCategory = ['', 'Ascending', 'Descending']
+  private _categories = ['Any', 'Public', 'Hybrid', 'Private']
+  private _transactionCounts = ['Any', '0 - 100 mil.', '100 mil. - 200 mil.', '200 mil. - 300 mil.', '300 mil. - 500 mil.', '500 mil. - 1 bil.', '> 1 bil.']
+  private _powerConsumptions = ['Any', '0 - 1000', '1000 - 2000', '2000 - 3000', '3000 - 5000', '>5000']
+  private _pricePerTrs = ['Any', '0 - 100 mil.', '100 mil. - 200 mil.', '200 mil. - 300 mil.', '300 mil. - 400 mil.', '500 mil. - 1 bil.', '> 1 bil.']
+  private _marketCaps = ['Any', '0 - 100.', '100 - 300', '300 - 500', '500 - 1000', '> 1000']
+
 
   get config(): AxiosRequestConfig {
     return this._config;
@@ -53,8 +82,6 @@ export class FilterService {
     this._config = value;
   }
 
-  private _requestError: boolean
-
   get requestError(): boolean {
     return this._requestError;
   }
@@ -62,8 +89,6 @@ export class FilterService {
   set requestError(value: boolean) {
     this._requestError = value;
   }
-
-  private _error: String = ''
 
   get error(): String {
     return this._error;
@@ -73,8 +98,6 @@ export class FilterService {
     this._error = value;
   }
 
-  private _blockchainList: BlockchainDTO[] = []
-
   get blockchainList(): BlockchainDTO[] {
     return this._blockchainList;
   }
@@ -82,8 +105,6 @@ export class FilterService {
   set blockchainList(value: BlockchainDTO[]) {
     this._blockchainList = value;
   }
-
-  private _showCategories: boolean;
 
   get showCategories(): boolean {
     return this._showCategories;
@@ -93,8 +114,6 @@ export class FilterService {
     this._showCategories = value;
   }
 
-  private _showCategoriesSorter: boolean;
-
   get showCategoriesSorter(): boolean {
     return this._showCategoriesSorter;
   }
@@ -102,8 +121,6 @@ export class FilterService {
   set showCategoriesSorter(value: boolean) {
     this._showCategoriesSorter = value;
   }
-
-  private _showTrCount: boolean;
 
   get showTrCount(): boolean {
     return this._showTrCount;
@@ -113,8 +130,6 @@ export class FilterService {
     this._showTrCount = value;
   }
 
-  private _showTrSorter: boolean;
-
   get showTrSorter(): boolean {
     return this._showTrSorter;
   }
@@ -122,8 +137,6 @@ export class FilterService {
   set showTrSorter(value: boolean) {
     this._showTrSorter = value;
   }
-
-  private _showPowerConsumption: boolean;
 
   get showPowerConsumption(): boolean {
     return this._showPowerConsumption;
@@ -133,8 +146,6 @@ export class FilterService {
     this._showPowerConsumption = value;
   }
 
-  private _showPowerSorter: boolean;
-
   get showPowerSorter(): boolean {
     return this._showPowerSorter;
   }
@@ -142,8 +153,6 @@ export class FilterService {
   set showPowerSorter(value: boolean) {
     this._showPowerSorter = value;
   }
-
-  private _showPricePerTr: boolean;
 
   get showPricePerTr(): boolean {
     return this._showPricePerTr;
@@ -153,8 +162,6 @@ export class FilterService {
     this._showPricePerTr = value;
   }
 
-  private _showPriceSorter: boolean;
-
   get showPriceSorter(): boolean {
     return this._showPriceSorter;
   }
@@ -162,8 +169,6 @@ export class FilterService {
   set showPriceSorter(value: boolean) {
     this._showPriceSorter = value;
   }
-
-  private _showMarketCap: boolean;
 
   get showMarketCap(): boolean {
     return this._showMarketCap;
@@ -173,8 +178,6 @@ export class FilterService {
     this._showMarketCap = value;
   }
 
-  private _showMarketSorter: boolean;
-
   get showMarketSorter(): boolean {
     return this._showMarketSorter;
   }
@@ -182,8 +185,6 @@ export class FilterService {
   set showMarketSorter(value: boolean) {
     this._showMarketSorter = value;
   }
-
-  private _sorterCategory = ['Ascending', 'Descending']
 
   get sorterCategory(): string[] {
     return this._sorterCategory;
@@ -193,8 +194,6 @@ export class FilterService {
     this._sorterCategory = value;
   }
 
-  private _categories = ['Any', 'Public', 'Hybrid', 'Private']
-
   get categories(): string[] {
     return this._categories;
   }
@@ -202,8 +201,6 @@ export class FilterService {
   set categories(value: string[]) {
     this._categories = value;
   }
-
-  private _transactionCounts = ['Any', '0 - 100 mil.', '100 - 200 mil.', '200 - 300 mil.', '300 - 500 mil.', '500 mil. - 1 bil.', '> 1 bil.']
 
   get transactionCounts(): string[] {
     return this._transactionCounts;
@@ -213,8 +210,6 @@ export class FilterService {
     this._transactionCounts = value;
   }
 
-  private _powerConsumptions = ['Any', '0 - 1000', '1000- 2000', '2000 - 3000', '3000 - 5000', '>5000']
-
   get powerConsumptions(): string[] {
     return this._powerConsumptions;
   }
@@ -223,8 +218,6 @@ export class FilterService {
     this._powerConsumptions = value;
   }
 
-  private _pricePerTrs = ['Any', '0 - 100 mil.', '100- 200 mil.', '200 - 300 mil.', '300 - 400 mil.', '500 mil. - 1 bil.', '> 1 bil.']
-
   get pricePerTrs(): string[] {
     return this._pricePerTrs;
   }
@@ -232,8 +225,6 @@ export class FilterService {
   set pricePerTrs(value: string[]) {
     this._pricePerTrs = value;
   }
-
-  private _marketCaps = ['Any', '0 - 100.', '100 - 300', '300 - 500', '500 - 1000', '> 1000']
 
   get marketCaps(): string[] {
     return this._marketCaps;
@@ -343,56 +334,6 @@ export class FilterService {
     this._selectedMarketSorter = value;
   }
 
-  private _categoryAscending: boolean;
-
-  get categoryAscending(): boolean {
-    return this._categoryAscending;
-  }
-
-  set categoryAscending(value: boolean) {
-    this._categoryAscending = value;
-  }
-
-  private _trCountAscending: boolean;
-
-  get trCountAscending(): boolean {
-    return this._trCountAscending;
-  }
-
-  set trCountAscending(value: boolean) {
-    this._trCountAscending = value;
-  }
-
-  private _powerConsumptionAscending: boolean;
-
-  get powerConsumptionAscending(): boolean {
-    return this._powerConsumptionAscending;
-  }
-
-  set powerConsumptionAscending(value: boolean) {
-    this._powerConsumptionAscending = value;
-  }
-
-  private _pricePerTrAscending: boolean;
-
-  get pricePerTrAscending(): boolean {
-    return this._pricePerTrAscending;
-  }
-
-  set pricePerTrAscending(value: boolean) {
-    this._pricePerTrAscending = value;
-  }
-
-  private _marketCapAscending: boolean;
-
-  get marketCapAscending(): boolean {
-    return this._marketCapAscending;
-  }
-
-  set marketCapAscending(value: boolean) {
-    this._marketCapAscending = value;
-  }
-
   public formatCategory(category: BlockchainCategory) {
     switch (category) {
       case BlockchainCategory.HYBRID:
@@ -494,8 +435,83 @@ export class FilterService {
     this.toggleMarketSorter()
   }
 
-  updateBlockchainList() {
+  extractMinAndMax(str: string, field: string) {
+    if (str[0] != '>') {
+      //ia prima parte
+      this.minimumValue = Number(str.substring(0, str.indexOf(' ')));
+      //daca contine mil in prima parte se inmulteste cu 1000000
+      if (str[str.indexOf(' ') + 1] == 'm') this.minimumValue = this.minimumValue * 1000000
 
+      //pentru a doua parte
+      let next = str.substring(str.indexOf('-') + 2, str.length)
+      if (next.indexOf('m') != -1) {
+        this.maximumValue = Number(next.substring(0, next.indexOf('m'))) * 1000000;
+      } else if (next.indexOf('b') != -1) this.maximumValue = 1000000000
+      else this.maximumValue = Number(next)
+    } else if (field == 'market') this.minimumValue = 1000
+    else if (field == 'power') this.minimumValue = 5000
+    else this.minimumValue = 1000000000
+  }
+
+  selectedSorting(str: string) {
+    if (str == 'Ascending') this.selectedOrder = 'asc';
+    else this.selectedOrder = 'desc';
+  }
+
+  updateBlockchainList(category: string, trCount: string, power: string, price: string, marketCap: string, categorySorter: string, trCountSorter: string, powerSorter: string, priceSorter: string, marketCapSorter: string) {
+
+    if (category != 'Any') {
+      this.extractMinAndMax(category, '');
+      this.selectedFilter = this.filterCategory[0];
+    } else if (trCount != 'Any') {
+      this.extractMinAndMax(trCount, '');
+      this.selectedFilter = this.filterCategory[3];
+    } else if (power != 'Any') {
+      this.extractMinAndMax(power, 'power');
+      this.selectedFilter = this.filterCategory[1];
+    } else if (price != 'Any') {
+      this.extractMinAndMax(price, '');
+      this.selectedFilter = this.filterCategory[2];
+    } else if (marketCap != 'Any') {
+      this.extractMinAndMax(marketCap, 'market');
+      this.selectedFilter = this.filterCategory[0];
+    }
+
+    if (categorySorter != '') {
+      this.selectedSorterField = this.filterCategory[0];
+      this.selectedSorting(category);
+    } else if (trCountSorter != 'Any') {
+      this.selectedSorterField = this.filterCategory[3];
+      this.selectedSorting(trCountSorter);
+    } else if (powerSorter != 'Any') {
+      this.selectedSorterField = this.filterCategory[1];
+      this.selectedSorting(powerSorter)
+    } else if (priceSorter != 'Any') {
+      this.selectedSorterField = this.filterCategory[2];
+      this.selectedSorting(priceSorter)
+    } else if (marketCapSorter != 'Any') {
+      this.selectedSorterField = this.filterCategory[0];
+      this.selectedSorting(marketCapSorter)
+    }
+
+    this._config.params = {
+      sortBy : this.selectedFilter,
+      order : 'asc',
+      min : this.minimumValue,
+      max : this.maximumValue,
+      filterBy : this.selectedFilter
+    }
+
+    axios.get(Routes.makePath(Routes.BLOCKCHAINS_ENDPOINT), this._config)
+      .then(response => {
+        console.dir(response)
+        this._blockchainList = response.data;
+      })
+      .catch((e) => {
+        this._requestError = true
+        this._error = e.response.statusText
+        console.log(e)
+      });
   }
 
   private getAllBlockchains() {
