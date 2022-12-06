@@ -6,13 +6,13 @@ import {CoinGeckoApi} from "../api/coingecko-api";
 import {HttpJsonResponse} from "../http/http-json-response";
 import {CustomError} from "../../web/middleware/error-handler-middleware";
 
-export class PolkadotCrawler extends WebCrawler {
-    private static readonly COINGECKO_COIN_ID = "polkadot"
+export class LitecoinCrawler extends WebCrawler {
+    private static readonly COINGECKO_COIN_ID = "litecoin"
 
-    private static readonly BLOCKCHAIN_NAME: string = "Polkadot"
-    private static readonly BLOCKCHAIN_URL: string = "https://www.blockchain.com/explorer/assets/DOT/"
+    private static readonly BLOCKCHAIN_NAME: string = "Litecoin"
+    private static readonly BLOCKCHAIN_URL: string = "https://www.blockchain.com/explorer/assets/ltc"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 70 // in MWh
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 
@@ -23,7 +23,7 @@ export class PolkadotCrawler extends WebCrawler {
 
     async crawl(): Promise<BlockchainModel> {
         // Perform HTTP request
-        let httpResponse: HttpJsonResponse = await Promise.race([this.coinGeckoApi.getCoinCurrentData(PolkadotCrawler.COINGECKO_COIN_ID), this.coinGeckoApi.timeout(WebCrawler.delayTime)])
+        let httpResponse: HttpJsonResponse = await Promise.race([this.coinGeckoApi.getCoinCurrentData(LitecoinCrawler.COINGECKO_COIN_ID), this.coinGeckoApi.timeout(WebCrawler.delayTime)])
         if (httpResponse.statusCode != 200) {
             throw new CustomError(`${httpResponse.bodyAsJson}`, httpResponse.statusCode)
         }
@@ -42,10 +42,10 @@ export class PolkadotCrawler extends WebCrawler {
 
         // Build & return model
         return new BlockchainModelBuilder()
-            .withName(PolkadotCrawler.BLOCKCHAIN_NAME)
-            .withBaseUrl(PolkadotCrawler.BLOCKCHAIN_URL)
-            .withCategory(PolkadotCrawler.BLOCKCHAIN_CATEGORY)
-            .withPowerConsumption(PolkadotCrawler.BLOCKCHAIN_POWER_CONSUMPTION)
+            .withName(LitecoinCrawler.BLOCKCHAIN_NAME)
+            .withBaseUrl(LitecoinCrawler.BLOCKCHAIN_URL)
+            .withCategory(LitecoinCrawler.BLOCKCHAIN_CATEGORY)
+            .withPowerConsumption(LitecoinCrawler.BLOCKCHAIN_POWER_CONSUMPTION)
             .withTransactionCount(transactionCount)
             .withPricePerTransaction(pricePerTransaction)
             .withMarketCap(marketCap)

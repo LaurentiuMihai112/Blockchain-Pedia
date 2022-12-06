@@ -9,7 +9,7 @@ import {CustomError} from "../../web/middleware/error-handler-middleware";
 export class TronCrawler extends WebCrawler {
     private static readonly COINGECKO_COIN_ID = "tron"
 
-    private static readonly BLOCKCHAIN_NAME: string = "TRON"
+    private static readonly BLOCKCHAIN_NAME: string = "Tron"
     private static readonly BLOCKCHAIN_URL: string = "https://tron.network/"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
     private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.1629 // in MWh
