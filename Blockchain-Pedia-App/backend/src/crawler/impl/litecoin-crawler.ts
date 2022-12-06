@@ -12,7 +12,7 @@ export class LitecoinCrawler extends WebCrawler {
     private static readonly BLOCKCHAIN_NAME: string = "Litecoin"
     private static readonly BLOCKCHAIN_URL: string = "https://www.blockchain.com/explorer/assets/ltc"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0 // in MWh
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.018 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 
