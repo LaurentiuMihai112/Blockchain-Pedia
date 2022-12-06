@@ -6,6 +6,7 @@ import {CardanoCrawler} from "../../crawler/impl/cardano-crawler";
 import {WebCrawler} from "../../crawler/web-crawler";
 import {SolanaCrawler} from "../../crawler/impl/solana-crawler";
 import {PolkadotCrawler} from "../../crawler/impl/polkadot-crawler";
+import {StellarCrawler} from "../../crawler/impl/stellar-crawler";
 
 export class BlockchainService {
     public static async findAll(): Promise<BlockchainModel[]> {
@@ -17,7 +18,8 @@ export class BlockchainService {
             new TronCrawler(coinGeckoApi),
             new CardanoCrawler(coinGeckoApi),
             new SolanaCrawler(coinGeckoApi),
-            new PolkadotCrawler(coinGeckoApi)
+            new PolkadotCrawler(coinGeckoApi),
+            new StellarCrawler(coinGeckoApi)
         ];
 
         // Get data foreach blockchain
