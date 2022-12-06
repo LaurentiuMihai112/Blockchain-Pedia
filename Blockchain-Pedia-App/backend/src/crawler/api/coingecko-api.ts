@@ -9,4 +9,13 @@ export class CoinGeckoApi {
         let url = `${CoinGeckoApi.API_BASE_URL}${CoinGeckoApi.API_COIN_CURRENT_DATA}${coinId}`
         return await Http.performGet(url)
     }
+
+    public async timeout(delayTime: number) {
+        await this.delay(delayTime)
+        return new HttpJsonResponse(503,`Request aborted as it took longer than ${delayTime}ms`);
+    }
+
+    private delay(ms: number) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 }

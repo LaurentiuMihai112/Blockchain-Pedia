@@ -4,8 +4,9 @@ import {WebCrawler} from "../web-crawler";
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
 import {CoinGeckoApi} from "../api/coingecko-api";
 import {HttpJsonResponse} from "../http/http-json-response";
+import {CustomError} from "../../web/middleware/error-handler-middleware";
 
-export class CardanoCrawler implements WebCrawler {
+export class CardanoCrawler extends WebCrawler {
     private static readonly COINGECKO_COIN_ID = "cardano"
 
     private static readonly BLOCKCHAIN_NAME: string = "Cardano"
@@ -16,14 +17,15 @@ export class CardanoCrawler implements WebCrawler {
     private coinGeckoApi: CoinGeckoApi
 
     constructor(coinGeckoApi: CoinGeckoApi) {
+        super()
         this.coinGeckoApi = coinGeckoApi
     }
 
     async crawl(): Promise<BlockchainModel> {
         // Perform HTTP request
-        let httpResponse: HttpJsonResponse = await this.coinGeckoApi.getCoinCurrentData(CardanoCrawler.COINGECKO_COIN_ID)
+        let httpResponse: HttpJsonResponse = await Promise.race([this.coinGeckoApi.getCoinCurrentData(CardanoCrawler.COINGECKO_COIN_ID), this.coinGeckoApi.timeout(WebCrawler.delayTime)])
         if (httpResponse.statusCode != 200) {
-            throw new Error(`Received status code ${httpResponse.statusCode}`)
+            throw new CustomError(`${httpResponse.bodyAsJson}`, httpResponse.statusCode)
         }
 
         // Get data

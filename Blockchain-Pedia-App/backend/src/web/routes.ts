@@ -3,6 +3,7 @@ import {Endpoints} from "./endpoints";
 import {BlockchainController} from "./controller/blockchain-controller";
 import {logRequestMiddleware} from "./middleware/logging-middleware";
 import {DataChartController} from "./controller/data-chart-controller";
+import {handleError} from "./middleware/error-handler-middleware";
 
 export default function (app: Express) {
 
@@ -14,4 +15,7 @@ export default function (app: Express) {
     app.get(Endpoints.DATA_CHART_FILTER, DataChartController.getChartForFilter)
     app.get(Endpoints.DATA_CHART_SORT, DataChartController.getChartForSort)
     app.get(Endpoints.DATA_CHAR_FILE, DataChartController.getChartFile)
+
+    // Error handler for request time out
+    app.use(handleError)
 }

@@ -7,29 +7,31 @@ import {PricePerTransactionComparator} from "../../sort/impl/price-per-transacti
 import {TransactionCountComparator} from "../../sort/impl/transaction-count-comparator";
 import {BlockchainFilter} from "../../filter/blockchain-filter";
 import {NumericSpec} from "../../filter/impl/numeric-spec";
+import {BlockchainModel} from "../../model/blockchain-model";
 
 export class BlockchainController {
 
-    public static getAllBlockchains = async (req: Request, res: Response): Promise<void> => {
+    public static getAllBlockchains = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
         const {sortBy, order, min, max, filterBy} = req.query;
-        let blockchains;
+        let blockchains: BlockchainModel[] = [];
 
         if (filterBy && (!min || !max)) {
             res.status(400).send("Missing specification for filter.")
             return;
         }
-
         try {
             blockchains = await BlockchainService.findAll();
         } catch (error) {
-            res.status(500).send("Error while fetching blockchains");
+            console.log("Error***********\n")
+            next(error)
             return;
+            // res.status(500).send("Error while fetching blockchains");
         }
 
         // filters
         const filterKey = `${filterBy}`;
 
-        if(filterBy && !["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount"].includes(filterKey)){
+        if (filterBy && !["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount"].includes(filterKey)) {
             res.status(400).send("Invalid filter key.");
             return;
         }
@@ -45,17 +47,17 @@ export class BlockchainController {
         const sortKey = `${sortBy}`;
         let comparator;
 
-        if(sortBy && !["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount"].includes(sortKey)){
+        if (sortBy && !["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount"].includes(sortKey)) {
             res.status(400).send("Invalid sorting key.");
             return;
         }
 
-        if(sortBy && !(order === 'asc' || order === 'desc')) {
+        if (sortBy && !(order === 'asc' || order === 'desc')) {
             res.status(400).send("Invalid order option.");
             return;
         }
 
-        switch(sortKey) {
+        switch (sortKey) {
             case "marketCap":
                 comparator = new MarketCapComparator();
                 break;
