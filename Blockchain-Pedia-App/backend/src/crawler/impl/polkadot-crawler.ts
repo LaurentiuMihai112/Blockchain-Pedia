@@ -12,7 +12,7 @@ export class PolkadotCrawler extends WebCrawler {
     private static readonly BLOCKCHAIN_NAME: string = "Polkadot"
     private static readonly BLOCKCHAIN_URL: string = "https://www.blockchain.com/explorer/assets/DOT/"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 70 // in MWh
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.015 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 

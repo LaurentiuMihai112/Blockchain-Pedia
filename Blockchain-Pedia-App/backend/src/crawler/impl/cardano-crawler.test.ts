@@ -41,7 +41,7 @@ describe('Cardano Crawler Tests', () => {
         expect(response.baseUrl).toEqual("https://cardano.org/")
         expect(response.category).toEqual(BlockchainCategory.PUBLIC)
         expect(response.transactionCount).toEqual(35045020830.3234)
-        expect(response.powerConsumption).toEqual(6000)
+        expect(response.powerConsumption).toEqual(0.018)
         expect(response.pricePerTransaction).toEqual(0.412092)
         expect(response.marketCap).toEqual(14418981692)
     })

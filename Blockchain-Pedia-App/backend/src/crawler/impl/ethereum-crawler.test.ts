@@ -44,7 +44,7 @@ describe('Ethereum Crawler Tests', () => {
         expect(response.baseUrl).toEqual("https://ethereum.org/")
         expect(response.category).toEqual(BlockchainCategory.PUBLIC)
         expect(response.transactionCount).toEqual(120522143.702509)
-        expect(response.powerConsumption).toEqual(2601)
+        expect(response.powerConsumption).toEqual(0.005)
         expect(response.pricePerTransaction).toEqual(1587.9)
         expect(response.marketCap).toEqual(191474094858)
     })

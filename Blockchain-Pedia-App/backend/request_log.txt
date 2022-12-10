@@ -15806,3 +15806,101 @@ Query
   maxTransactionCount: 'any'
 }
 
+REQUEST GET /blockchains
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+Error***********
+Middleware Error Handling
+REQUEST GET /blockchains
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+

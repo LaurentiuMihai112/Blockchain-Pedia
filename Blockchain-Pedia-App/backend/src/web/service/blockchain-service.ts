@@ -19,6 +19,19 @@ import {BlockchainSorter} from "../../sort/blockchain-sorter";
 import {
     PricePerTransactionAndMarketCapComparator
 } from "../../sort/impl/price-per-transaction-and-market-cap-comparator";
+import {BitcoinCrawler} from "../../crawler/impl/bitcoin-crawler";
+import {TetherCrawler} from "../../crawler/impl/tether-crawler";
+import {BnbCrawler} from "../../crawler/impl/bnb-crawler";
+import {UsdCoinCrawler} from "../../crawler/impl/usd-coin-crawler";
+import {BinanceCoinCrawler} from "../../crawler/impl/binance-coin-crawler";
+import {XrpCrawler} from "../../crawler/impl/xrp-crawler";
+import {DogeCoinCrawler} from "../../crawler/impl/doge-coin-crawler";
+import {PolygonCrawler} from "../../crawler/impl/polygon-crawler";
+import {LidoStakedEtherCrawler} from "../../crawler/impl/lido-staked-ether-crawler";
+import {OkbCrawler} from "../../crawler/impl/okb-crawler";
+import {DaiCrawler} from "../../crawler/impl/dai-crawler";
+import {UniswapCrawler} from "../../crawler/impl/uniswap-crawler";
+import {AvalancheCrawler} from "../../crawler/impl/avalanche-crawler";
 
 function isNumericValue(value: string): boolean {
     return !isNaN(Number(value))
@@ -36,7 +49,20 @@ export class BlockchainService {
             new SolanaCrawler(coinGeckoApi),
             new PolkadotCrawler(coinGeckoApi),
             new StellarCrawler(coinGeckoApi),
-            new LitecoinCrawler(coinGeckoApi)
+            new LitecoinCrawler(coinGeckoApi),
+            new BitcoinCrawler(coinGeckoApi),
+            new TetherCrawler(coinGeckoApi),
+            new BnbCrawler(coinGeckoApi),
+            new UsdCoinCrawler(coinGeckoApi),
+            new BinanceCoinCrawler(coinGeckoApi),
+            new XrpCrawler(coinGeckoApi),
+            new DogeCoinCrawler(coinGeckoApi),
+            new PolygonCrawler(coinGeckoApi),
+            new LidoStakedEtherCrawler(coinGeckoApi),
+            new OkbCrawler(coinGeckoApi),
+            new DaiCrawler(coinGeckoApi),
+            new UniswapCrawler(coinGeckoApi),
+            new AvalancheCrawler(coinGeckoApi),
         ];
 
         // Get data foreach blockchain

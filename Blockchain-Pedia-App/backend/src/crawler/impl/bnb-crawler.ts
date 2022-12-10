@@ -6,13 +6,13 @@ import {CoinGeckoApi} from "../api/coingecko-api";
 import {HttpJsonResponse} from "../http/http-json-response";
 import {CustomError} from "../../web/middleware/error-handler-middleware";
 
-export class EthereumCrawler extends WebCrawler {
-    private static readonly COINGECKO_COIN_ID = "ethereum"
+export class BnbCrawler extends WebCrawler {
+    private static readonly COINGECKO_COIN_ID = "binancecoin"
 
-    private static readonly BLOCKCHAIN_NAME: string = "Ethereum"
-    private static readonly BLOCKCHAIN_URL: string = "https://ethereum.org/"
-    private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.005 // in MWh
+    private static readonly BLOCKCHAIN_NAME: string = "Binance Coin (BNB)"
+    private static readonly BLOCKCHAIN_URL: string = "https://binance.com/"
+    private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PRIVATE
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.025 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 
@@ -23,9 +23,9 @@ export class EthereumCrawler extends WebCrawler {
 
     async crawl(): Promise<BlockchainModel> {
         // Perform HTTP request
-        let httpResponse: HttpJsonResponse = await Promise.race([this.coinGeckoApi.getCoinCurrentData(EthereumCrawler.COINGECKO_COIN_ID), this.coinGeckoApi.timeout(WebCrawler.delayTime)])
+        let httpResponse: HttpJsonResponse = await Promise.race([this.coinGeckoApi.getCoinCurrentData(BnbCrawler.COINGECKO_COIN_ID), this.coinGeckoApi.timeout(WebCrawler.delayTime)])
         if (httpResponse.statusCode != 200) {
-            throw new CustomError(`${httpResponse.bodyAsJson}`,httpResponse.statusCode)
+            throw new CustomError(`${httpResponse.bodyAsJson}`, httpResponse.statusCode)
         }
 
         // Get data
@@ -42,14 +42,13 @@ export class EthereumCrawler extends WebCrawler {
 
         // Build & return model
         return new BlockchainModelBuilder()
-            .withName(EthereumCrawler.BLOCKCHAIN_NAME)
-            .withBaseUrl(EthereumCrawler.BLOCKCHAIN_URL)
-            .withCategory(EthereumCrawler.BLOCKCHAIN_CATEGORY)
-            .withPowerConsumption(EthereumCrawler.BLOCKCHAIN_POWER_CONSUMPTION)
+            .withName(BnbCrawler.BLOCKCHAIN_NAME)
+            .withBaseUrl(BnbCrawler.BLOCKCHAIN_URL)
+            .withCategory(BnbCrawler.BLOCKCHAIN_CATEGORY)
+            .withPowerConsumption(BnbCrawler.BLOCKCHAIN_POWER_CONSUMPTION)
             .withTransactionCount(transactionCount)
             .withPricePerTransaction(pricePerTransaction)
             .withMarketCap(marketCap)
             .build()
     }
-
 }
