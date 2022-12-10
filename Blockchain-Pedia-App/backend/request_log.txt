@@ -15446,4 +15446,363 @@ Headers
 Query
 { filterBy: 'marketCap', min: '10', max: '100' }
 
-VALUE IS: 10VALUE IS: 100
+VALUE IS: 10VALUE IS: 100REQUEST GET /blockchains/recommendations
+Body
+{}
+Headers
+{}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{}
+Headers
+{}
+Query
+{}
+
+objectREQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+objectREQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=1&maxPowerConsumption=1000&minMarketCap=any&maxMarketCap=any&minTransactionCount=any&maxTransactionCount=any
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '1',
+  maxPowerConsumption: '1000',
+  minMarketCap: 'any',
+  maxMarketCap: 'any',
+  minTransactionCount: 'any',
+  maxTransactionCount: 'any'
+}
+
