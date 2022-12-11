@@ -82,4 +82,18 @@ export class BlockchainController {
         res.status(200).send(blockchains);
         return;
     }
+
+    public static getBlockchainRecommendations = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+        const {type, maxPricePerTransaction, maxPowerConsumption, minMarketCap, maxMarketCap, minTransactionCount, maxTransactionCount} = req.query;
+        // @ts-ignore
+        const blockchains = await BlockchainService.findRecommendations(type, maxPricePerTransaction, maxPowerConsumption, minMarketCap, maxMarketCap, minTransactionCount, maxTransactionCount)
+
+        if (blockchains == null) {
+            res.status(400).send("Found invalid values in request body!").end()
+            return;
+        }
+
+        res.status(200).send(blockchains).end()
+        return;
+    }
 }

@@ -12,7 +12,7 @@ export class SolanaCrawler extends WebCrawler {
     private static readonly BLOCKCHAIN_NAME: string = "Solana"
     private static readonly BLOCKCHAIN_URL: string = "https://www.blockchain.com/explorer/assets/SOL/"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 1967 // in MWh
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.023 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 

@@ -12,7 +12,7 @@ export class CardanoCrawler extends WebCrawler {
     private static readonly BLOCKCHAIN_NAME: string = "Cardano"
     private static readonly BLOCKCHAIN_URL: string = "https://cardano.org/"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 6000 // in MWh
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.018 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 

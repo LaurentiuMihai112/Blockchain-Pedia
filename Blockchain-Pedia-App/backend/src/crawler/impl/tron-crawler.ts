@@ -12,7 +12,7 @@ export class TronCrawler extends WebCrawler {
     private static readonly BLOCKCHAIN_NAME: string = "Tron"
     private static readonly BLOCKCHAIN_URL: string = "https://tron.network/"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.1629 // in MWh
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.001 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 

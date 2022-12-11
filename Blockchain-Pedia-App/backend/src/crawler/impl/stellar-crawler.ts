@@ -12,7 +12,7 @@ export class StellarCrawler extends WebCrawler {
     private static readonly BLOCKCHAIN_NAME: string = "Stellar"
     private static readonly BLOCKCHAIN_URL: string = "https://www.blockchain.com/explorer/assets/xlm"
     private static readonly BLOCKCHAIN_CATEGORY: BlockchainCategory = BlockchainCategory.PUBLIC
-    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.222 // in MWh
+    private static readonly BLOCKCHAIN_POWER_CONSUMPTION: number = 0.015 // in MWh
 
     private coinGeckoApi: CoinGeckoApi
 

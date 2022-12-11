@@ -11,6 +11,9 @@ export default function (app: Express) {
     // Get the list of Blockchains
     app.get(Endpoints.BLOCKCHAINS, logRequestMiddleware, checkRequestMiddleware, BlockchainController.getAllBlockchains);
 
+    // Get Blockchain recommendations
+    app.get(Endpoints.BLOCKCHAIN_RECOMMENDATIONS, logRequestMiddleware, BlockchainController.getBlockchainRecommendations)
+
     // Generate data chart
     app.get(Endpoints.DATA_CHART_ORDER, DataChartController.getChartForOrder)
     app.get(Endpoints.DATA_CHART_FILTER, DataChartController.getChartForFilter)

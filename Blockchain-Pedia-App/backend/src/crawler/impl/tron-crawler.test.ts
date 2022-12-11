@@ -43,7 +43,7 @@ describe('Tron Crawler Tests', () => {
         expect(response.baseUrl).toEqual("https://tron.network/")
         expect(response.category).toEqual(BlockchainCategory.PUBLIC)
         expect(response.transactionCount).toEqual(92258746339.0195)
-        expect(response.powerConsumption).toEqual(0.1629)
+        expect(response.powerConsumption).toEqual(0.001)
         expect(response.pricePerTransaction).toEqual(0.062974)
         expect(response.marketCap).toEqual(5809764736)
     })
