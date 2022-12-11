@@ -9,6 +9,19 @@ import {PolkadotCrawler} from "../crawler/impl/polkadot-crawler";
 import {StellarCrawler} from "../crawler/impl/stellar-crawler";
 import {LitecoinCrawler} from "../crawler/impl/litecoin-crawler";
 import moment from 'moment';
+import {BitcoinCrawler} from "../crawler/impl/bitcoin-crawler";
+import {TetherCrawler} from "../crawler/impl/tether-crawler";
+import {UsdCoinCrawler} from "../crawler/impl/usd-coin-crawler";
+import {BinanceCoinCrawler} from "../crawler/impl/binance-coin-crawler";
+import {XrpCrawler} from "../crawler/impl/xrp-crawler";
+import {DogeCoinCrawler} from "../crawler/impl/doge-coin-crawler";
+import {PolygonCrawler} from "../crawler/impl/polygon-crawler";
+import {LidoStakedEtherCrawler} from "../crawler/impl/lido-staked-ether-crawler";
+import {OkbCrawler} from "../crawler/impl/okb-crawler";
+import {DaiCrawler} from "../crawler/impl/dai-crawler";
+import {UniswapCrawler} from "../crawler/impl/uniswap-crawler";
+import {AvalancheCrawler} from "../crawler/impl/avalanche-crawler";
+import {BnbCrawler} from "../crawler/impl/bnb-crawler";
 
 export class BlockchainRuntimeCachedData {
     static blockchainData: BlockchainModel[] = []
@@ -30,13 +43,27 @@ export class BlockchainRuntimeCachedData {
                 new SolanaCrawler(coinGeckoApi),
                 new PolkadotCrawler(coinGeckoApi),
                 new StellarCrawler(coinGeckoApi),
-                new LitecoinCrawler(coinGeckoApi)
+                new LitecoinCrawler(coinGeckoApi),
+                new BitcoinCrawler(coinGeckoApi),
+                new TetherCrawler(coinGeckoApi),
+                new BnbCrawler(coinGeckoApi),
+                new UsdCoinCrawler(coinGeckoApi),
+                new BinanceCoinCrawler(coinGeckoApi),
+                new XrpCrawler(coinGeckoApi),
+                new DogeCoinCrawler(coinGeckoApi),
+                new PolygonCrawler(coinGeckoApi),
+                new LidoStakedEtherCrawler(coinGeckoApi),
+                new OkbCrawler(coinGeckoApi),
+                new DaiCrawler(coinGeckoApi),
+                new UniswapCrawler(coinGeckoApi),
+                new AvalancheCrawler(coinGeckoApi),
             ];
 
             // Get data foreach blockchain
             for (let i = 0; i < webCrawlerImplementations.length; i++) {
                 BlockchainRuntimeCachedData.blockchainData.push(await webCrawlerImplementations[i].crawl());
             }
+
 
         } else
             console.log("Not enough time passed\n")
