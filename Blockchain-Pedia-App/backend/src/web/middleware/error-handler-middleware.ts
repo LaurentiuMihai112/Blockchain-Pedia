@@ -6,6 +6,7 @@ export const handleError = (err: TypeError | CustomError, req: Request<any>, res
         return next(err)
     }
     if (err instanceof CustomError) {
+        console.log(err)
         const errStatus = err.statusCode || 500;
 
         const errMsg = err.message || 'Something went wrong';
@@ -15,6 +16,7 @@ export const handleError = (err: TypeError | CustomError, req: Request<any>, res
             'message': errMsg
         })).end()
     } else {
+        console.log(err)
         res.status(500).send("Something went wrong").end()
     }
 }
