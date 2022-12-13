@@ -13,6 +13,18 @@ export class NumericSpec implements BlockchainSpec {
     }
 
     isSatisfied(blockchain: BlockchainModel): boolean {
+        if (this.minValue === -1 && this.maxValue === -1) {
+            return true;
+        }
+
+        if (this.minValue === -1) {
+            return blockchain[this.key] <= this.maxValue;
+        }
+
+        if (this.maxValue === -1) {
+            return blockchain[this.key] >= this.minValue;
+        }
+
         return blockchain[this.key] >= this.minValue && blockchain[this.key] <= this.maxValue;
     }
 
