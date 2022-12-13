@@ -57,7 +57,7 @@ export class BlockchainController {
                     const blockchainFilter = new BlockchainFilter();
                     let category = BlockchainCategory.PUBLIC
                     if (Number(minValues[i]) == -1) category = BlockchainCategory.HYBRID
-                    else if (Number(minValues[i]) ==-2) category = BlockchainCategory.PRIVATE
+                    else if (Number(minValues[i]) == -2) category = BlockchainCategory.PRIVATE
 
                     blockchains = blockchainFilter.filter(blockchains, new CategorySpec(category));
                 } else {
