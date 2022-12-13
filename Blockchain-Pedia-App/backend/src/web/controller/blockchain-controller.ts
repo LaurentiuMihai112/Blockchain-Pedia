@@ -23,24 +23,39 @@ export class BlockchainController {
             blockchains = await BlockchainService.findAll();
         } catch (error) {
             console.log("Error***********\n")
-            next(error)
+            res.status(500).send("Error while fetching blockchains");
             return;
-            // res.status(500).send("Error while fetching blockchains");
         }
+
+        console.log(req.query, blockchains);
 
         // filters
-        const filterKey = `${filterBy}`;
+        const filterKeys = `${filterBy}`
+        const filters = filterBy ? filterKeys.split(',') : [];
 
-        if (filterBy && !["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount"].includes(filterKey)) {
-            res.status(400).send("Invalid filter key.");
-            return;
-        }
+        if (filters.length) {
+            const minKey = `${min}`;
+            const minValues = min ? minKey.split(',') : [];
+            const maxKey = `${max}`
+            const maxValues = max ? maxKey.split(',') : [];
 
-        if (filterBy) {
-            // @ts-ignore
-            const spec = new NumericSpec(Number(min), Number(max), filterKey);
-            const blockchainFilter = new BlockchainFilter();
-            blockchains = blockchainFilter.filter(blockchains, spec);
+            if(!(filters.length === minValues.length && filters.length === maxValues.length)) {
+                res.status(400).send("Inconsistent filters");
+                return;
+            }
+
+            for (let i = 0; i < filters.length; i++){
+                let filter = filters[i];
+
+                if (!["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount"].includes(filter)) {
+                    res.status(400).send("Invalid filter key.");
+                    return;
+                }
+
+                const spec = new NumericSpec(Number(minValues[i]), Number(maxValues[i]), <keyof BlockchainModel> filter);
+                const blockchainFilter = new BlockchainFilter();
+                blockchains = blockchainFilter.filter(blockchains, spec);
+            }
         }
 
         // sorting

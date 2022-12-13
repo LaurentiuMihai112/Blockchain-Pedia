@@ -26,53 +26,53 @@ export const checkRequestMiddleware = (req: Request<any>, res: Response, next: N
     let isError = false;
     let paramNameWithError = ""
     let paramValueWithError = ""
-    for (let key of queryKeys) {
-        switch (key) {
-            case "sortBy":
-                if (!isValidSortByValue(String(query[key]))) {
-                    isError = true;
-                    paramNameWithError = key
-                    paramValueWithError = String(query[key])
-                }
-                break;
-
-            case "filterBy":
-                if (!isValidFilterByValue(String(query[key]))) {
-                    isError = true;
-                    paramNameWithError = key
-                    paramValueWithError = String(query[key])
-                }
-                break;
-
-            case "order":
-                if (!isValidOrderValue(String(query[key]))) {
-                    isError = true;
-                    paramNameWithError = key
-                    paramValueWithError = String(query[key])
-                }
-                break;
-
-            case "min":
-                if (!isNumericValue(String(query[key]))) {
-                    isError = true;
-                    paramNameWithError = key
-                    paramValueWithError = String(query[key])
-                }
-                break;
-
-            case "max":
-                if (!isNumericValue(String(query[key]))) {
-                    isError = true;
-                    paramNameWithError = key
-                    paramValueWithError = String(query[key])
-                }
-                break;
-        }
-
-        if (isError) {
-            break;
-        }
-    }
+    // for (let key of queryKeys) {
+    //     switch (key) {
+    //         case "sortBy":
+    //             if (!isValidSortByValue(String(query[key]))) {
+    //                 isError = true;
+    //                 paramNameWithError = key
+    //                 paramValueWithError = String(query[key])
+    //             }
+    //             break;
+    //
+    //         case "filterBy":
+    //             if (!isValidFilterByValue(String(query[key]))) {
+    //                 isError = true;
+    //                 paramNameWithError = key
+    //                 paramValueWithError = String(query[key])
+    //             }
+    //             break;
+    //
+    //         case "order":
+    //             if (!isValidOrderValue(String(query[key]))) {
+    //                 isError = true;
+    //                 paramNameWithError = key
+    //                 paramValueWithError = String(query[key])
+    //             }
+    //             break;
+    //
+    //         case "min":
+    //             if (!isNumericValue(String(query[key]))) {
+    //                 isError = true;
+    //                 paramNameWithError = key
+    //                 paramValueWithError = String(query[key])
+    //             }
+    //             break;
+    //
+    //         case "max":
+    //             if (!isNumericValue(String(query[key]))) {
+    //                 isError = true;
+    //                 paramNameWithError = key
+    //                 paramValueWithError = String(query[key])
+    //             }
+    //             break;
+    //     }
+    //
+    //     if (isError) {
+    //         break;
+    //     }
+    // }
 
     if (isError) {
         res.status(400).send(
