@@ -38,17 +38,17 @@ export class FilterService {
     this._selectedMarketCap = this._marketCaps[0]
     this._selectedMarketSorter = this._sorterCategory[0]
     this.selectedFilter = this.filterCategory[0]
-    this.selectedOrder = ''
+    this.selectedOrder = 'asc'
     this.selectedSorterField = this.sorterCategoryField[0]
-    this.minimumValue = 0
-    this.maximumValue = 9999999999999
+    this.minimumValue = ''
+    this.maximumValue = ''
   }
 
   private selectedFilter: string;
   private selectedSorterField: string;
   private selectedOrder: string;
-  private minimumValue: number;
-  private maximumValue: number;
+  private minimumValue: string;
+  private maximumValue: string;
 
   private _config: AxiosRequestConfig
   private _requestError: boolean
@@ -65,7 +65,7 @@ export class FilterService {
   private _showPricePerTr: boolean;
   private _showMarketCap: boolean;
   private _showMarketSorter: boolean;
-  private filterCategory = ['marketCap', 'powerConsumption', 'pricePerTransaction', 'transactionCount'];
+  private filterCategory = ['category','marketCap', 'powerConsumption', 'pricePerTransaction', 'transactionCount'];
   private sorterCategoryField = ['marketCap', 'powerConsumption', 'pricePerTransaction', 'transactionCount'];
   private _sorterCategory = ['', 'Ascending', 'Descending']
   private _categories = ['Any', 'Public', 'Hybrid', 'Private']
@@ -477,22 +477,36 @@ export class FilterService {
   }
 
   extractMinAndMax(str: string, field: string) {
-    if (str[0] != '>') {
-      //ia prima parte
-      this.minimumValue = Number(str.substring(0, str.indexOf(' ')));
-      //daca contine mil in prima parte se inmulteste cu 1000000
-      if (str[str.indexOf(' ') + 1] == 'm') this.minimumValue = this.minimumValue * 1000000
+    if (field=="category") {
+      if (str == "Public") this.minimumValue = String(-3)
+      else if (str == "Private") this.minimumValue = String(-2)
+      else this.minimumValue = String(-1)
+      this.maximumValue = '9999999999999'
+    }else
+    {
+      if (str[0] != '>') {
+        //ia prima parte
+        let minimum = Number(str.substring(0, str.indexOf(' ')));
+        //daca contine mil in prima parte se inmulteste cu 1000000
+        if (str[str.indexOf(' ') + 1] == 'm') this.minimumValue += String(minimum * 1000000)
+        else this.minimumValue += minimum
 
-      //pentru a doua parte
-      let next = str.substring(str.indexOf('-') + 2, str.length)
-      if (next.indexOf('m') != -1) {
-        this.maximumValue = Number(next.substring(0, next.indexOf('m'))) * 1000000;
-      } else if (next.indexOf('b') != -1) this.maximumValue = 1000000000
-      else this.maximumValue = Number(next)
-    } else if (field == 'market') this.minimumValue = 1000
-    else if (field == 'power') this.minimumValue = 5000
-    else this.minimumValue = 1000000000
+        //pentru a doua parte
+        let next = str.substring(str.indexOf('-') + 2, str.length)
+        if (next.indexOf('m') != -1) {
+          this.maximumValue += String(Number(next.substring(0, next.indexOf('m'))) * 1000000);
+        } else if (next.indexOf('b') != -1) this.maximumValue += String(1000000000)
+        else this.maximumValue += next
+      }
+      else if (field == 'market') {this.minimumValue += String(1000)
+        this.maximumValue+='999999999999'}
+      else if (field == 'power') {this.minimumValue += String(5000)
+        this.maximumValue+='999999999999'}
+      else {this.minimumValue += String(1000000000)
+       this.maximumValue+='999999999999'}
+    }
   }
+
 
   selectedSorting(str: string) {
     if (str == 'Ascending') this.selectedOrder = 'asc';
@@ -501,46 +515,102 @@ export class FilterService {
 
   updateBlockchainList(category: string, trCount: string, power: string, price: string, marketCap: string, categorySorter: string, trCountSorter: string, powerSorter: string, priceSorter: string, marketCapSorter: string) {
 
+    let numberSelectedFilter =0
     if (category != 'Any') {
-      this.extractMinAndMax(category, '');
+      this.extractMinAndMax(category, 'category');
       this.selectedFilter = this.filterCategory[0];
-    } else if (trCount != 'Any') {
-      this.extractMinAndMax(trCount, '');
-      this.selectedFilter = this.filterCategory[3];
-    } else if (power != 'Any') {
-      this.extractMinAndMax(power, 'power');
-      this.selectedFilter = this.filterCategory[1];
-    } else if (price != 'Any') {
-      this.extractMinAndMax(price, '');
-      this.selectedFilter = this.filterCategory[2];
-    } else if (marketCap != 'Any') {
-      this.extractMinAndMax(marketCap, 'market');
-      this.selectedFilter = this.filterCategory[0];
+      numberSelectedFilter++
+    }
+    if (trCount != 'Any') {
+      if (numberSelectedFilter!=0)
+      {
+        this.minimumValue+=','
+        this.maximumValue+=','
+        this.extractMinAndMax(trCount, '');
+        this.selectedFilter +=','
+        this.selectedFilter += this.filterCategory[4];
+      }
+      else {
+        this.selectedFilter=this.filterCategory[4];this.extractMinAndMax(trCount, '');
+      }
+      numberSelectedFilter++
+    }
+    if (power != 'Any') {
+      if (numberSelectedFilter!=0)
+      {
+        this.minimumValue+=','
+        this.maximumValue+=','
+        this.extractMinAndMax(power, 'power');
+        this.selectedFilter +=','
+        this.selectedFilter += this.filterCategory[2];
+      }
+      else {
+        this.selectedFilter=this.filterCategory[2];this.extractMinAndMax(power, 'power');
+      }
+      numberSelectedFilter++
+    }
+    if (price != 'Any') {
+      if (numberSelectedFilter!=0)
+      {
+        this.minimumValue+=','
+        this.maximumValue+=','
+        this.extractMinAndMax(price, '');
+        this.selectedFilter +=','
+        this.selectedFilter += this.filterCategory[3];
+      }
+      else {
+        this.selectedFilter=this.filterCategory[3];
+      }
+      numberSelectedFilter++
+    }
+    if (marketCap != 'Any') {
+
+      if (numberSelectedFilter!=0)
+      {
+        this.minimumValue+=','
+        this.maximumValue+=','
+        this.extractMinAndMax(marketCap, 'market');
+        this.selectedFilter +=','
+        this.selectedFilter += this.filterCategory[1];}
+      else {
+        this.selectedFilter=this.filterCategory[1];this.extractMinAndMax(marketCap, 'market');
+      }
     }
 
     if (categorySorter != '') {
       this.selectedSorterField = this.filterCategory[0];
       this.selectedSorting(category);
     } else if (trCountSorter != 'Any') {
-      this.selectedSorterField = this.filterCategory[3];
+      this.selectedSorterField = this.filterCategory[4];
       this.selectedSorting(trCountSorter);
     } else if (powerSorter != 'Any') {
-      this.selectedSorterField = this.filterCategory[1];
+      this.selectedSorterField = this.filterCategory[2];
       this.selectedSorting(powerSorter)
     } else if (priceSorter != 'Any') {
-      this.selectedSorterField = this.filterCategory[2];
+      this.selectedSorterField = this.filterCategory[3];
       this.selectedSorting(priceSorter)
     } else if (marketCapSorter != 'Any') {
-      this.selectedSorterField = this.filterCategory[0];
+      this.selectedSorterField = this.filterCategory[1];
       this.selectedSorting(marketCapSorter)
     }
-
-    this._config.params = {
-      sortBy: this.selectedFilter,
-      order: 'asc',
-      min: this.minimumValue,
-      max: this.maximumValue,
-      filterBy: this.selectedFilter
+    if( numberSelectedFilter!=0) {
+      console.log(this.minimumValue, this.maximumValue, this.selectedSorterField)
+      this._config.params = {
+        sortBy: this.selectedSorterField,
+        order: this.selectedOrder,
+        min: this.minimumValue,
+        max: this.maximumValue,
+        filterBy: this.selectedFilter
+      }
+    }
+    else{
+      this._config.params = {
+        sortBy: 'powerConsumption',
+        order: 'asc',
+        min: '0',
+        max: '999999999999',
+        filterBy: 'powerConsumption'
+      }
     }
 
     axios.get(Routes.makePath(Routes.BLOCKCHAINS_ENDPOINT), this._config)
@@ -553,6 +623,10 @@ export class FilterService {
         this._error = e.response.statusText
         console.log(e)
       });
+  this.maximumValue=''
+    this.minimumValue=''
+    this.selectedFilter=this.filterCategory[0]
+    this.selectedOrder=''
   }
 
   private getAllBlockchains() {

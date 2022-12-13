@@ -9,6 +9,7 @@ import {BlockchainFilter} from "../../filter/blockchain-filter";
 import {NumericSpec} from "../../filter/impl/numeric-spec";
 import {BlockchainModel} from "../../model/blockchain-model";
 import {CategorySpec} from "../../filter/impl/category-spec";
+import {BlockchainCategory} from "../../model/enum/blockchain-category";
 
 export class BlockchainController {
 
@@ -54,7 +55,11 @@ export class BlockchainController {
                 }
                 if (["category"].includes(filter)) {
                     const blockchainFilter = new BlockchainFilter();
-                    blockchains = blockchainFilter.filter(blockchains, CategorySpec);
+                    let category = BlockchainCategory.PUBLIC
+                    if (Number(minValues[i]) == -1) category = BlockchainCategory.HYBRID
+                    else if (Number(minValues[i]) ==-2) category = BlockchainCategory.PRIVATE
+
+                    blockchains = blockchainFilter.filter(blockchains, new CategorySpec(category));
                 } else {
                     const spec = new NumericSpec(Number(minValues[i]), Number(maxValues[i]), <keyof BlockchainModel>filter);
                     const blockchainFilter = new BlockchainFilter();
