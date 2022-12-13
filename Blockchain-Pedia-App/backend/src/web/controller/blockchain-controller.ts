@@ -8,6 +8,7 @@ import {TransactionCountComparator} from "../../sort/impl/transaction-count-comp
 import {BlockchainFilter} from "../../filter/blockchain-filter";
 import {NumericSpec} from "../../filter/impl/numeric-spec";
 import {BlockchainModel} from "../../model/blockchain-model";
+import {CategorySpec} from "../../filter/impl/category-spec";
 
 export class BlockchainController {
 
@@ -39,22 +40,26 @@ export class BlockchainController {
             const maxKey = `${max}`
             const maxValues = max ? maxKey.split(',') : [];
 
-            if(!(filters.length === minValues.length && filters.length === maxValues.length)) {
+            if (!(filters.length === minValues.length && filters.length === maxValues.length)) {
                 res.status(400).send("Inconsistent filters");
                 return;
             }
 
-            for (let i = 0; i < filters.length; i++){
+            for (let i = 0; i < filters.length; i++) {
                 let filter = filters[i];
 
-                if (!["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount"].includes(filter)) {
+                if (!["marketCap", "powerConsumption", "pricePerTransaction", "transactionCount", "category"].includes(filter)) {
                     res.status(400).send("Invalid filter key.");
                     return;
                 }
-
-                const spec = new NumericSpec(Number(minValues[i]), Number(maxValues[i]), <keyof BlockchainModel> filter);
-                const blockchainFilter = new BlockchainFilter();
-                blockchains = blockchainFilter.filter(blockchains, spec);
+                if (["category"].includes(filter)) {
+                    const blockchainFilter = new BlockchainFilter();
+                    blockchains = blockchainFilter.filter(blockchains, CategorySpec);
+                } else {
+                    const spec = new NumericSpec(Number(minValues[i]), Number(maxValues[i]), <keyof BlockchainModel>filter);
+                    const blockchainFilter = new BlockchainFilter();
+                    blockchains = blockchainFilter.filter(blockchains, spec);
+                }
             }
         }
 
