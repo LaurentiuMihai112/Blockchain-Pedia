@@ -84,7 +84,15 @@ export class BlockchainController {
     }
 
     public static getBlockchainRecommendations = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-        const {type, maxPricePerTransaction, maxPowerConsumption, minMarketCap, maxMarketCap, minTransactionCount, maxTransactionCount} = req.query;
+        const {
+            type,
+            maxPricePerTransaction,
+            maxPowerConsumption,
+            minMarketCap,
+            maxMarketCap,
+            minTransactionCount,
+            maxTransactionCount
+        } = req.query;
         // @ts-ignore
         const blockchains = await BlockchainService.findRecommendations(type, maxPricePerTransaction, maxPowerConsumption, minMarketCap, maxMarketCap, minTransactionCount, maxTransactionCount)
 
@@ -93,7 +101,7 @@ export class BlockchainController {
             return;
         }
 
-        res.status(200).send(blockchains).end()
+        res.status(200).send(blockchains.splice(0, 3)).end()
         return;
     }
 }

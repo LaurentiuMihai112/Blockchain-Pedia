@@ -3,20 +3,20 @@ import {BlockchainDTO} from "../dto/BlockchainDTO";
 import axios, {AxiosRequestConfig} from "axios";
 import {Routes} from "../dto/routes";
 import {BlockchainCategory} from "../dto/enum/BlockchainCategory";
-import {mark} from "@angular/compiler-cli/src/ngtsc/perf/src/clock";
 
 @Injectable({
-  providedIn : 'root'
+  providedIn: 'root'
 })
 export class FilterService {
 
   constructor() {
     this._requestError = false
     this._config = {
-      headers : {},
-      params : {}
+      headers: {},
+      params: {}
     }
     this.getAllBlockchains()
+    this.getBlockchainsRecommendation()
     this._showCategories = false
     this._showCategoriesSorter = false;
     this._showTrCount = false
@@ -54,6 +54,7 @@ export class FilterService {
   private _requestError: boolean
   private _error: String = ''
   private _blockchainList: BlockchainDTO[] = []
+  private _blockchainRecommendationList: BlockchainDTO[] = []
   private _showCategories: boolean;
   private _showCategoriesSorter: boolean;
   private _showTrCount: boolean;
@@ -347,6 +348,10 @@ export class FilterService {
 
   toggleCategory() {
     this.showCategories = !this.showCategories
+    this.showMarketCap = false
+    this.showTrCount = false
+    this.showPowerConsumption = false
+    this.showPricePerTr = false
   }
 
   selectCategory(category: string) {
@@ -356,6 +361,10 @@ export class FilterService {
 
   toggleCategorySorter() {
     this.showCategoriesSorter = !this.showCategoriesSorter
+    this.showMarketSorter = false
+    this.showTrSorter = false
+    this.showPowerSorter = false
+    this.showPriceSorter = false
   }
 
   selectCategorySorter(type: string) {
@@ -365,6 +374,10 @@ export class FilterService {
 
   toggleTrCount() {
     this.showTrCount = !this.showTrCount
+    this.showMarketCap = false
+    this.showCategories = false
+    this.showPowerConsumption = false
+    this.showPricePerTr = false
   }
 
   selectTrCount(trCount: string) {
@@ -374,6 +387,10 @@ export class FilterService {
 
   toggleTrSorter() {
     this.showTrSorter = !this.showTrSorter
+    this.showMarketSorter = false
+    this.showCategoriesSorter = false
+    this.showPowerSorter = false
+    this.showPriceSorter = false
   }
 
   selectTrSorter(type: string) {
@@ -383,6 +400,10 @@ export class FilterService {
 
   togglePowerConsumption() {
     this.showPowerConsumption = !this.showPowerConsumption
+    this.showMarketCap = false
+    this.showTrCount = false
+    this.showCategories = false
+    this.showPricePerTr = false
   }
 
   selectPowerConsumption(powerConsumption: string) {
@@ -392,6 +413,10 @@ export class FilterService {
 
   togglePowerSorter() {
     this.showPowerSorter = !this.showPowerSorter
+    this.showMarketSorter = false
+    this.showTrSorter = false
+    this.showCategoriesSorter = false
+    this.showPriceSorter = false
   }
 
   selectPowerSorter(type: string) {
@@ -401,6 +426,10 @@ export class FilterService {
 
   togglePricePerTr() {
     this.showPricePerTr = !this.showPricePerTr
+    this.showMarketCap = false
+    this.showTrCount = false
+    this.showPowerConsumption = false
+    this.showCategories = false
   }
 
   selectPricePerTr(pricePerTr: string) {
@@ -410,6 +439,10 @@ export class FilterService {
 
   togglePriceSorter() {
     this.showPriceSorter = !this.showPriceSorter
+    this.showMarketSorter = false
+    this.showTrSorter = false
+    this.showPowerSorter = false
+    this.showCategoriesSorter = false
   }
 
   selectPriceSorter(type: string) {
@@ -419,6 +452,10 @@ export class FilterService {
 
   toggleMarketCap() {
     this.showMarketCap = !this.showMarketCap
+    this.showCategories = false
+    this.showTrCount = false
+    this.showPowerConsumption = false
+    this.showPricePerTr = false
   }
 
   selectMarketCap(marketCap: string) {
@@ -428,6 +465,10 @@ export class FilterService {
 
   toggleMarketSorter() {
     this.showMarketSorter = !this.showMarketSorter
+    this.showCategoriesSorter = false
+    this.showTrSorter = false
+    this.showPowerSorter = false
+    this.showPriceSorter = false
   }
 
   selectMarketSorter(type: string) {
@@ -495,11 +536,11 @@ export class FilterService {
     }
 
     this._config.params = {
-      sortBy : this.selectedFilter,
-      order : 'asc',
-      min : this.minimumValue,
-      max : this.maximumValue,
-      filterBy : this.selectedFilter
+      sortBy: this.selectedFilter,
+      order: 'asc',
+      min: this.minimumValue,
+      max: this.maximumValue,
+      filterBy: this.selectedFilter
     }
 
     axios.get(Routes.makePath(Routes.BLOCKCHAINS_ENDPOINT), this._config)
@@ -527,5 +568,38 @@ export class FilterService {
         console.log(e)
       });
 
+  }
+
+  private getBlockchainsRecommendation() {
+    let localConfig={
+      params:{
+        type: 'PUBLIC',
+        maxPricePerTransaction: 10000000000,
+        minPricePerTransaction: 0,
+        maxTransactionCount: 10000000000,
+        minTransactionCount: 0,
+        maxMarketCap: 10000000000,
+        minMarketCap: 0,
+      }
+    }
+    axios.get(Routes.makePath(Routes.BLOCKCHAIN_RECOMMENDATIONS_ENDPOINT), localConfig)
+      .then(response => {
+        console.dir(response)
+        this._blockchainRecommendationList = response.data;
+      })
+      .catch((e) => {
+        this._requestError = true
+        this._error = e.response.statusText
+        console.log(e)
+      });
+
+  }
+
+  get blockchainRecommendationList(): BlockchainDTO[] {
+    return this._blockchainRecommendationList;
+  }
+
+  set blockchainRecommendationList(value: BlockchainDTO[]) {
+    this._blockchainRecommendationList = value;
   }
 }

@@ -31,7 +31,7 @@ export class BlockchainRuntimeCachedData {
     public static async getData(): Promise<BlockchainModel[]> {
         if ((moment(this.lastUpdated).add(this.MINUTES_DELTA_FOR_CACHING, 'm').toDate() <= moment(Date.now()).toDate()) || this.lastUpdated == null) {
             BlockchainRuntimeCachedData.blockchainData = []
-            console.log("rerun API\n")
+            console.log("Fetching new Data from API\n")
             this.lastUpdated = Date.now()
 
             const coinGeckoApi = new CoinGeckoApi();
@@ -66,7 +66,7 @@ export class BlockchainRuntimeCachedData {
 
 
         } else
-            console.log("Not enough time passed\n")
+            console.log("Using cached data\n")
 
         // Return all blockchain data
         return BlockchainRuntimeCachedData.blockchainData
