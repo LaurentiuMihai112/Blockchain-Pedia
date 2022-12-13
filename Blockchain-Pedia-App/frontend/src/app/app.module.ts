@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { DataViewComponent } from './data-view/data-view.component';
 import { FilterComponent } from './filter/filter.component';
 import { ChartComponent } from './chart/chart.component';
+import { BestFitComponent } from './best-fit/best-fit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChartComponent } from './chart/chart.component';
     HomeComponent,
     DataViewComponent,
     FilterComponent,
-    ChartComponent
+    ChartComponent,
+    BestFitComponent
   ],
   imports: [
     BrowserModule,
