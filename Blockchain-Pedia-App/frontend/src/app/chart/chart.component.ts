@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import axios, {AxiosRequestConfig} from "axios";
 import {Routes} from "../dto/routes";
 
@@ -26,39 +26,39 @@ export class ChartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private async getSortChartImage() {
+  private getSortChartImage() {
     let imageName = ""
-    await axios.get(Routes.makePath(Routes.CHARTS_SORT_ENDPOINT), this.config)
+    axios.get(Routes.makePath(Routes.CHARTS_SORT_ENDPOINT), this.config)
       .then(response => {
         imageName = response.data
       })
-      .catch((e) => {
+      .catch(() => {
         this.getSortChartImage()
       });
 
     this.sortChartImage = Routes.makePath(Routes.CHARTS_FILE_ENDPOINT + "?name=" + imageName)
   }
 
-  private async getOrderChartImage() {
+  private getOrderChartImage() {
     let imageName = ""
-    await axios.get(Routes.makePath(Routes.CHARTS_ORDER_ENDPOINT), this.config)
+    axios.get(Routes.makePath(Routes.CHARTS_ORDER_ENDPOINT), this.config)
       .then(response => {
         imageName = response.data
       })
-      .catch((e) => {
+      .catch(() => {
         this.getSortChartImage()
       });
 
     this.orderChartImage = Routes.makePath(Routes.CHARTS_FILE_ENDPOINT + "?name=" + imageName)
   }
 
-  private async getFilterChartImage() {
+  private getFilterChartImage() {
     let imageName = ""
-    await axios.get(Routes.makePath(Routes.CHARTS_FILTER_ENDPOINT), this.config)
+    axios.get(Routes.makePath(Routes.CHARTS_FILTER_ENDPOINT), this.config)
       .then(response => {
         imageName = response.data
       })
-      .catch((e) => {
+      .catch(() => {
         this.getSortChartImage()
       });
 

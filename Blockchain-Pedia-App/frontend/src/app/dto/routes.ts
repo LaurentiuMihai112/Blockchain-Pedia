@@ -12,6 +12,6 @@ export class Routes {
   }
 
   static makeStaticPath(image: string) {
-    this.HOST + 'static/' + image
+    return this.HOST + 'static/' + image
   }
 }
