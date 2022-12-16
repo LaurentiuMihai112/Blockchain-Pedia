@@ -436,11 +436,26 @@ export class FilterService {
   }
 
   toggleCategory() {
-    this.showCategories = !this.showCategories
+    let temp = this.showCategories
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showCategories = !temp
+  }
+
+  closeAllFilters() {
+    this.showCategories = false
     this.showMarketCap = false
     this.showTrCount = false
     this.showPowerConsumption = false
     this.showPricePerTr = false
+  }
+
+  closeAllSorters() {
+    this.showCategoriesSorter = false
+    this.showMarketSorter = false
+    this.showTrSorter = false
+    this.showPowerSorter = false
+    this.showPriceSorter = false
   }
 
   selectCategory(category: string) {
@@ -449,11 +464,10 @@ export class FilterService {
   }
 
   toggleCategorySorter() {
-    this.showCategoriesSorter = !this.showCategoriesSorter
-    this.showMarketSorter = false
-    this.showTrSorter = false
-    this.showPowerSorter = false
-    this.showPriceSorter = false
+    let temp = this.showCategoriesSorter
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showCategoriesSorter = !temp
   }
 
   selectCategorySorter(type: string) {
@@ -462,11 +476,10 @@ export class FilterService {
   }
 
   toggleTrCount() {
-    this.showTrCount = !this.showTrCount
-    this.showMarketCap = false
-    this.showCategories = false
-    this.showPowerConsumption = false
-    this.showPricePerTr = false
+    let temp = this.showTrCount
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showTrCount = !temp
   }
 
   selectTrCount(trCount: string) {
@@ -475,11 +488,10 @@ export class FilterService {
   }
 
   toggleTrSorter() {
-    this.showTrSorter = !this.showTrSorter
-    this.showMarketSorter = false
-    this.showCategoriesSorter = false
-    this.showPowerSorter = false
-    this.showPriceSorter = false
+    let temp = this.showTrSorter
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showTrSorter = !temp
   }
 
   selectTrSorter(type: string) {
@@ -488,11 +500,10 @@ export class FilterService {
   }
 
   togglePowerConsumption() {
-    this.showPowerConsumption = !this.showPowerConsumption
-    this.showMarketCap = false
-    this.showTrCount = false
-    this.showCategories = false
-    this.showPricePerTr = false
+    let temp = this.showPowerConsumption
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showPowerConsumption = !temp
   }
 
   selectPowerConsumption(powerConsumption: string) {
@@ -501,11 +512,10 @@ export class FilterService {
   }
 
   togglePowerSorter() {
-    this.showPowerSorter = !this.showPowerSorter
-    this.showMarketSorter = false
-    this.showTrSorter = false
-    this.showCategoriesSorter = false
-    this.showPriceSorter = false
+    let temp = this.showPowerSorter
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showPowerSorter = !temp
   }
 
   selectPowerSorter(type: string) {
@@ -514,11 +524,10 @@ export class FilterService {
   }
 
   togglePricePerTr() {
-    this.showPricePerTr = !this.showPricePerTr
-    this.showMarketCap = false
-    this.showTrCount = false
-    this.showPowerConsumption = false
-    this.showCategories = false
+    let temp = this.showPricePerTr
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showPricePerTr = !temp
   }
 
   selectPricePerTr(pricePerTr: string) {
@@ -527,11 +536,10 @@ export class FilterService {
   }
 
   togglePriceSorter() {
-    this.showPriceSorter = !this.showPriceSorter
-    this.showMarketSorter = false
-    this.showTrSorter = false
-    this.showPowerSorter = false
-    this.showCategoriesSorter = false
+    let temp = this.showPriceSorter
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showPriceSorter = !temp
   }
 
   selectPriceSorter(type: string) {
@@ -540,11 +548,10 @@ export class FilterService {
   }
 
   toggleMarketCap() {
-    this.showMarketCap = !this.showMarketCap
-    this.showCategories = false
-    this.showTrCount = false
-    this.showPowerConsumption = false
-    this.showPricePerTr = false
+    let temp = this.showMarketCap
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showMarketCap = !temp
   }
 
   selectMarketCap(marketCap: string) {
@@ -553,11 +560,10 @@ export class FilterService {
   }
 
   toggleMarketSorter() {
-    this.showMarketSorter = !this.showMarketSorter
-    this.showCategoriesSorter = false
-    this.showTrSorter = false
-    this.showPowerSorter = false
-    this.showPriceSorter = false
+    let temp = this.showMarketSorter
+    this.closeAllFilters()
+    this.closeAllSorters()
+    this.showMarketSorter = !temp
   }
 
   selectMarketSorter(type: string) {
@@ -573,13 +579,13 @@ export class FilterService {
       this._maximumValue = '9999999999999'
     } else {
       if (str[0] != '>') {
-        //ia prima parte
+        //first part
         let minimum = Number(str.substring(0, str.indexOf(' ')));
-        //daca contine mil in prima parte se inmulteste cu 1000000
+        //if contains mil in first part we multiply by 1000000
         if (str[str.indexOf(' ') + 1] == 'm') this._minimumValue += String(minimum * 1000000)
         else this._minimumValue += minimum
 
-        //pentru a doua parte
+        //for second part
         let next = str.substring(str.indexOf('-') + 2, str.length)
         if (next.indexOf('m') != -1) {
           this._maximumValue += String(Number(next.substring(0, next.indexOf('m'))) * 1000000);
