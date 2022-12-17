@@ -43,7 +43,7 @@ export class BlockchainService {
         blockchains = await this.filterBlockchainListByMarketCap(blockchains, minMarketCap, maxMarketCap)
 
         // Filter by transaction count
-        blockchains = await this.filterBlockchainListByTransactionCount(blockchains, minMarketCap, maxMarketCap)
+        blockchains = await this.filterBlockchainListByTransactionCount(blockchains, minTransactionCount, maxTransactionCount)
 
         // Sort recommendations
         blockchains = this.sortRecommendations(blockchains)
