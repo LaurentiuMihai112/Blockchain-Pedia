@@ -10,6 +10,7 @@ import {NumericSpec} from "../../filter/impl/numeric-spec";
 import {BlockchainModel} from "../../model/blockchain-model";
 import {CategorySpec} from "../../filter/impl/category-spec";
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
+import deepcopy from "deepcopy";
 
 export class BlockchainController {
 
@@ -22,7 +23,7 @@ export class BlockchainController {
             return;
         }
         try {
-            blockchains = await BlockchainService.findAll();
+            blockchains = deepcopy(await BlockchainService.findAll());
         } catch (error) {
             console.log("Error***********\n")
             res.status(500).send("Error while fetching blockchains");
@@ -121,7 +122,7 @@ export class BlockchainController {
             minPowerConsumption,
         } = req.query;
         const blockchains =
-            await BlockchainService.findRecommendations(
+            deepcopy(await BlockchainService.findRecommendations(
                 // @ts-ignore
                 type,
                 minPricePerTransaction,
@@ -132,7 +133,7 @@ export class BlockchainController {
                 maxTransactionCount,
                 maxPowerConsumption,
                 minPowerConsumption
-            )
+            ))
 
         if (blockchains == null) {
             res.status(400).send("Found invalid values in request body!").end()
