@@ -112,14 +112,27 @@ export class BlockchainController {
         const {
             type,
             maxPricePerTransaction,
-            maxPowerConsumption,
-            minMarketCap,
-            maxMarketCap,
+            minPricePerTransaction,
+            maxTransactionCount,
             minTransactionCount,
-            maxTransactionCount
+            maxMarketCap,
+            minMarketCap,
+            maxPowerConsumption,
+            minPowerConsumption,
         } = req.query;
-        // @ts-ignore
-        const blockchains = await BlockchainService.findRecommendations(type, maxPricePerTransaction, maxPowerConsumption, minMarketCap, maxMarketCap, minTransactionCount, maxTransactionCount)
+        const blockchains =
+            await BlockchainService.findRecommendations(
+                // @ts-ignore
+                type,
+                minPricePerTransaction,
+                maxPricePerTransaction,
+                minMarketCap,
+                maxMarketCap,
+                minTransactionCount,
+                maxTransactionCount,
+                maxPowerConsumption,
+                minPowerConsumption
+            )
 
         if (blockchains == null) {
             res.status(400).send("Found invalid values in request body!").end()

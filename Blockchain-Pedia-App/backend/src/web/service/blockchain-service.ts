@@ -21,9 +21,15 @@ export class BlockchainService {
         return await BlockchainRuntimeCachedData.getData()
     }
 
-    public static async findRecommendations(type: string, maxPricePerTransaction: string, maxPowerConsumption: string,
-                                            minMarketCap: string, maxMarketCap: string, minTransactionCount: string,
-                                            maxTransactionCount: string): Promise<BlockchainModel[] | null> {
+    public static async findRecommendations(type: string,
+                                            minPricePerTransaction: string,
+                                            maxPricePerTransaction: string,
+                                            minMarketCap: string,
+                                            maxMarketCap: string,
+                                            minTransactionCount: string,
+                                            maxTransactionCount: string,
+                                            maxPowerConsumption: string,
+                                            minPowerConsumption: string): Promise<BlockchainModel[] | null> {
         let blockchains = await BlockchainService.findAll();
 
         // Filter by blockchain type
@@ -31,22 +37,14 @@ export class BlockchainService {
         if (blockchainType == null) {
             return null;
         }
-        blockchains = await this.filterBlockchainListByType(blockchains, blockchainType)
-
-        // Filter by price per transaction
-        blockchains = await this.filterBlockchainListByPricePerTransaction(blockchains, 0, maxPricePerTransaction)
-
-        // Filter by power consumption
-        blockchains = await this.filterBlockchainListByPowerConsumption(blockchains, 0, maxPowerConsumption)
-
-        // Filter by market cap
-        blockchains = await this.filterBlockchainListByMarketCap(blockchains, minMarketCap, maxMarketCap)
-
-        // Filter by transaction count
-        blockchains = await this.filterBlockchainListByTransactionCount(blockchains, minTransactionCount, maxTransactionCount)
-
+        console.log("_________________RATING_________________")
+        blockchains = this.rateBlockchains(blockchains, minPricePerTransaction, maxPricePerTransaction, minMarketCap, maxMarketCap, minTransactionCount, maxTransactionCount, maxPowerConsumption, minPowerConsumption)
         // Sort recommendations
-        blockchains = this.sortRecommendations(blockchains)
+        blockchains = this.sortRecommendationsByRating(blockchains)
+        for (const blockchainElement of blockchains) {
+            console.log(blockchainElement.rating)
+            console.log('\n')
+        }
 
         return blockchains
     }
@@ -119,5 +117,45 @@ export class BlockchainService {
     private static sortRecommendations(blockchains: BlockchainModel[]) {
         let blockchainSorter = new BlockchainSorter()
         return blockchainSorter.sortAscending(blockchains, new PricePerTransactionAndMarketCapComparator())
+    }
+
+    private static rateBlockchains(blockchains: BlockchainModel[],
+                                   minPricePerTransaction: string,
+                                   maxPricePerTransaction: string,
+                                   minMarketCap: string,
+                                   maxMarketCap: string,
+                                   minTransactionCount: string,
+                                   maxTransactionCount: string,
+                                   maxPowerConsumption: string,
+                                   minPowerConsumption: string) {
+        for (const blockchain of blockchains) {
+            if (blockchain.pricePerTransaction < parseInt(maxPricePerTransaction) && blockchain.pricePerTransaction > parseInt(minPricePerTransaction)) {
+                blockchain.rating *= 1.2;
+            } else {
+                blockchain.rating *= 0.8
+            }
+            if (blockchain.marketCap < parseInt(maxMarketCap) && blockchain.marketCap > parseInt(minMarketCap)) {
+                blockchain.rating *= 1.2;
+            } else {
+                blockchain.rating *= 0.8
+            }
+            if (blockchain.transactionCount < parseInt(maxTransactionCount) && blockchain.transactionCount > parseInt(minTransactionCount)) {
+                blockchain.rating *= 1.2;
+            } else {
+                blockchain.rating *= 0.8
+            }
+            if (blockchain.powerConsumption < parseInt(maxPowerConsumption) && blockchain.powerConsumption > parseInt(minPowerConsumption)) {
+                blockchain.rating *= 1.2;
+            } else {
+                blockchain.rating *= 0.8
+            }
+        }
+        return blockchains
+    }
+
+    private static sortRecommendationsByRating(blockchains: BlockchainModel[]) {
+        return blockchains.sort((b1, b2) => {
+            return b2.rating - b1.rating
+        });
     }
 }

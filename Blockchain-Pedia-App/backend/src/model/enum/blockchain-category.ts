@@ -13,6 +13,9 @@ export function getBlockchainCategoryFromText(text: string): BlockchainCategory 
         case "HYBRID":
             return BlockchainCategory.HYBRID
 
+        case "Any":
+            return BlockchainCategory.PUBLIC
+
         default:
             return null
     }

@@ -18772,3 +18772,1188 @@ Query
 }
 
 Using cached data
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0'
+}
+
+Using cached data
+{}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+{}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+{}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0,1000&max=100000000,2000&filterBy=transactionCount,powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0,1000',
+  max: '100000000,2000',
+  filterBy: 'transactionCount,powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0,1000',
+  max: '100000000,2000',
+  filterBy: 'transactionCount,powerConsumption'
+}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+REQUEST GET /blockchains/all
+Using cached data
+Body
+1.3823999999999999{}1.3823999999999999
+Headers
+1.3823999999999999{}2.0736
+Query
+2.0736{}1.3823999999999999
+
+2.0736Using cached data
+1.3823999999999999{}0.92161.38239999999999990.92160.92160.92160.92162.07362.07362.07362.07362.07362.0736REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________REQUEST GET /blockchains/all
+Body
+{}
+Headers
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+{}Body
+
+Query
+{}{}
+Headers
+
+
+{}Using cached data
+
+Query
+{}{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Using cached data
+{}Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________REQUEST GET /blockchains/all
+0.9216Body
+0.9216{}0.9216
+Headers
+0.9216{}0.9216
+Query
+0.9216{}0.9216
+
+0.9216Using cached data
+0.6144000000000002{}0.61440000000000020.61440000000000020.61440000000000020.61440000000000020.61440000000000020.92162.07360.92160.92160.92160.9216REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________0.377487360000000160.377487360000000160.377487360000000160.377487360000000160.377487360000000160.84934656000000010.84934656000000010.84934656000000010.84934656000000010.84934656000000010.84934656000000010.84934656000000010.84934656000000010.377487360000000164.2998169599999990.84934656000000010.8493465600000001REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________{}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0,0&max=100000000,1000&filterBy=transactionCount,powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0,0',
+  max: '100000000,1000',
+  filterBy: 'transactionCount,powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0,0',
+  max: '100000000,1000',
+  filterBy: 'transactionCount,powerConsumption'
+}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________{}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+Fetching new Data from API
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________0.9216
+0.9216
+0.9216
+0.9216
+0.9216
+0.9216
+0.9216
+0.9216
+0.6144000000000002
+0.6144000000000002
+0.6144000000000002
+0.6144000000000002
+0.6144000000000002
+0.6144000000000002
+0.9216
+2.0736
+0.9216
+0.9216
+0.9216
+0.9216
+REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.8493465600000001
+0.37748736000000016
+0.37748736000000016
+0.37748736000000016
+0.37748736000000016
+0.37748736000000016
+0.37748736000000016
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000&minPricePerTransaction=1000&maxTransactionCount=10000000&minTransactionCount=0&maxMarketCap=9999999900&minMarketCap=0&maxPowerConsumption=10000000000&minPowerConsumption=0
+Body
+{}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+
+Headers
+Body
+{}{}
+Query
+
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000',
+  minPricePerTransaction: '1000',
+  maxTransactionCount: '10000000',
+  minTransactionCount: '0',
+  maxMarketCap: '9999999900',
+  minMarketCap: '0',
+  maxPowerConsumption: '10000000000',
+  minPowerConsumption: '0'
+}{}
+
+
+Query
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+_________________RATING_________________Using cached data
+0.7827577896960002{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+0.7827577896960002
+0.782757789696
+0.7827577896960002
+0.7827577896960002
+0.7827577896960002
+0.7827577896960002
+0.7827577896960002
+0.23192823398400012
+0.23192823398400012
+0.23192823398400012
+0.23192823398400012
+0.23192823398400012
+0.23192823398400012
+REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+{}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+
+
+Using cached data
+Body
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=9999999%0A9999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '9999999\n9999',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=9999999%0A9999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '9999999\n9999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=9999999%0A9999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '9999999\n9999',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=9999999%0A9999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '9999999\n9999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=9999999%0A9999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '9999999\n9999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+_________________RATING_________________0.9216
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+2.0736
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+2.0736
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (D:\Master\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=0&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '0',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+_________________RATING_________________2.0736
+2.0736
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+1.3823999999999999
+0.9216
+REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/recommendations?type=Any&maxPricePerTransaction=99999999999&minPricePerTransaction=0&maxTransactionCount=100000000&minTransactionCount=0&maxMarketCap=99999999999&minMarketCap=1000000000&maxPowerConsumption=99999999999&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'Any',
+  maxPricePerTransaction: '99999999999',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000',
+  minTransactionCount: '0',
+  maxMarketCap: '99999999999',
+  minMarketCap: '1000000000',
+  maxPowerConsumption: '99999999999',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+_________________RATING_________________1.9110297599999997
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+1.9110297599999995
+0.8493465600000001
+REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0,1000&max=100000000,999999999999&filterBy=transactionCount,marketCap
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0,1000',
+  max: '100000000,999999999999',
+  filterBy: 'transactionCount,marketCap'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0,1000',
+  max: '100000000,999999999999',
+  filterBy: 'transactionCount,marketCap'
+}

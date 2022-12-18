@@ -9,6 +9,7 @@ export class BlockchainModelBuilder {
     private _powerConsumption: number = 0
     private _pricePerTransaction: number = 0
     private _marketCap: number = 0
+    private _rating: number = 1
 
     public BlockchainModelBuilder() {
     }
@@ -45,6 +46,11 @@ export class BlockchainModelBuilder {
 
     public withPowerConsumption(powerConsumption: number): BlockchainModelBuilder {
         this._powerConsumption = powerConsumption
+        return this
+    }
+
+    public withRating(): BlockchainModelBuilder {
+        this._rating = 0
         return this
     }
 

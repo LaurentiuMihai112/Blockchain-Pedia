@@ -10,6 +10,7 @@ export class BlockchainModel {
         this._powerConsumption = powerConsumption;
         this._pricePerTransaction = pricePerTransaction;
         this._marketCap = marketCap;
+        this._rating = 1
     }
 
     private _name: string;
@@ -80,5 +81,15 @@ export class BlockchainModel {
 
     set marketCap(value: number) {
         this._marketCap = value;
+    }
+
+    private _rating: number
+
+    get rating(): number {
+        return this._rating;
+    }
+
+    set rating(value: number) {
+        this._rating = value;
     }
 }

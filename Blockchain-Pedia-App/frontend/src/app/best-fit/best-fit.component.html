@@ -1,7 +1,7 @@
-<div class="flex justify-around p-4">
+<div class="flex justify-around p-4" *ngIf="filterService.isFiltered">
   <h1 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Best Blockchains for you</h1>
 </div>
-<div class="flex justify-around p-4">
+<div class="flex justify-around p-4" *ngIf="filterService.isFiltered">
   <div *ngFor="let blockchain of this.filterService.blockchainRecommendationList">
     <div class="w-full  p-4 bg-white border rounded-lg shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
       <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{{blockchain._name}}</h5>

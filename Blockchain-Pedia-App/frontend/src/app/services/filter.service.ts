@@ -8,6 +8,9 @@ import {BlockchainCategory} from "../dto/enum/BlockchainCategory";
   providedIn: 'root'
 })
 export class FilterService {
+  private _isFiltered: boolean = false
+  private readonly _maxFilterValue = 99999999999
+  private readonly _minFilterValue = 0
 
   constructor() {
     this._requestError = false
@@ -16,7 +19,7 @@ export class FilterService {
       params: {}
     }
     this.getAllBlockchains()
-    this.getBlockchainsRecommendation()
+    // this.getBlockchainsRecommendation()
     this._showCategories = false
     this._showCategoriesSorter = false;
     this._showTrCount = false
@@ -610,7 +613,8 @@ export class FilterService {
   }
 
   updateBlockchainList(category: string, trCount: string, power: string, price: string, marketCap: string, categorySorter: string, trCountSorter: string, powerSorter: string, priceSorter: string, marketCapSorter: string) {
-
+    this._isFiltered = true;
+    this.getBlockchainsRecommendation()
     let numberSelectedFilter = 0
     if (category != 'Any') {
       this.extractMinAndMax(category, 'category');
@@ -727,15 +731,21 @@ export class FilterService {
   }
 
   private getBlockchainsRecommendation() {
+    let _trCountFilterValues = this.parseFilter(this.selectedTrCount)
+    let _powerConsumptionFilterValues = this.parseFilter(this.selectedPowerConsumption)
+    let _pricePerTrFilterValues = this.parseFilter(this.selectedPricePerTr)
+    let _marketCapFilterValues = this.parseFilter(this.selectedMarketCap)
     let localConfig = {
       params: {
-        type: 'PUBLIC',
-        maxPricePerTransaction: 10000000000,
-        minPricePerTransaction: 0,
-        maxTransactionCount: 10000000000,
-        minTransactionCount: 0,
-        maxMarketCap: 10000000000,
-        minMarketCap: 0,
+        type: this.selectedCategory,
+        maxPricePerTransaction: _pricePerTrFilterValues.max,
+        minPricePerTransaction: _pricePerTrFilterValues.min,
+        maxTransactionCount: _trCountFilterValues.max,
+        minTransactionCount: _trCountFilterValues.min,
+        maxMarketCap: _marketCapFilterValues.max,
+        minMarketCap: _marketCapFilterValues.min,
+        maxPowerConsumption: _powerConsumptionFilterValues.max,
+        minPowerConsumption: _powerConsumptionFilterValues.min,
       }
     }
     axios.get(Routes.makePath(Routes.BLOCKCHAIN_RECOMMENDATIONS_ENDPOINT), localConfig)
@@ -748,5 +758,39 @@ export class FilterService {
         this._error = e.response.statusText
         console.log(e)
       });
+  }
+
+  get isFiltered(): boolean {
+    return this._isFiltered;
+  }
+
+  set isFiltered(value: boolean) {
+    this._isFiltered = value;
+  }
+
+  private parseFilter(filter: string) {
+    if (filter == 'Any') {
+      return {min: this._minFilterValue, max: this._maxFilterValue}
+    } else if (filter.includes('>')) {
+      filter = filter.replace('>', '')
+      return {min: this.parseValue(filter), max: this._maxFilterValue}
+    } else {
+      let values = filter.split('-')
+      return {min: this.parseValue(values[0]), max: this.parseValue(values[1])}
+    }
+  }
+
+  private parseValue(filter: string) {
+    filter = filter.replace(' ', '')
+    if (filter.includes('bil.')) {
+      filter = filter.replace('bil.', '')
+      return parseInt(filter) * 1000000000
+    }
+    if (filter.includes('mil.')) {
+      filter = filter.replace('mil.', '')
+      return parseInt(filter) * 1000000
+    }
+    let filterNumber = parseInt(filter)
+    return filterNumber
   }
 }
