@@ -297,7 +297,7 @@ export class FilterService {
     this._transactionCounts = value;
   }
 
-  private _powerConsumptions = ['Any', '0 - 1000', '1000 - 2000', '2000 - 3000', '3000 - 5000', '> 5000']
+  private _powerConsumptions = ['Any', '0 - 0.005', '0.005 - 0.01', '0.01 - 0.05', '0.05 - 0.1', '0.1 - 1', '> 1']
 
   get powerConsumptions(): string[] {
     return this._powerConsumptions;
@@ -307,7 +307,7 @@ export class FilterService {
     this._powerConsumptions = value;
   }
 
-  private _pricePerTrs = ['Any', '0 - 100 mil.', '100 mil. - 200 mil.', '200 mil. - 300 mil.', '300 mil. - 400 mil.', '500 mil. - 1 bil.', '> 1 bil.']
+  private _pricePerTrs = ['Any', '0 - 1', '1 - 100', '100 - 500', '500 - 1000', '> 1000']
 
   get pricePerTrs(): string[] {
     return this._pricePerTrs;
@@ -317,7 +317,7 @@ export class FilterService {
     this._pricePerTrs = value;
   }
 
-  private _marketCaps = ['Any', '0 - 100 mil.', '100 mil. - 300 mil.', '300 mil. - 500 mil.', '500 mil. - 1 bil.', '> 1 bil.']
+  private _marketCaps = ['Any', '0 - 5 bil.', '5 bil. - 15 bil.', '15 bil. - 100 bil.', '> 100 bil.']
 
   get marketCaps(): string[] {
     return this._marketCaps;
@@ -586,22 +586,26 @@ export class FilterService {
         let minimum = Number(str.substring(0, str.indexOf(' ')));
         //if contains mil in first part we multiply by 1000000
         if (str[str.indexOf(' ') + 1] == 'm') this._minimumValue += String(minimum * 1000000)
+        else if (str[str.indexOf(' ') + 1] == 'b') this._minimumValue += String(minimum * 1000000000)
         else this._minimumValue += minimum
 
         //for second part
         let next = str.substring(str.indexOf('-') + 2, str.length)
         if (next.indexOf('m') != -1) {
           this._maximumValue += String(Number(next.substring(0, next.indexOf('m'))) * 1000000);
-        } else if (next.indexOf('b') != -1) this._maximumValue += String(1000000000)
-        else this._maximumValue += next
-      } else if (field == 'market') {
+        } else if (next.indexOf('b') != -1) {
+          let number = Number(next.substring(0, next.indexOf(' ')))
+          this._maximumValue += String(number * 1000000000)
+        } else this._maximumValue += next
+      } else if (field == 'price') {
         this._minimumValue += String(1000)
         this._maximumValue += '999999999999'
       } else if (field == 'power') {
         this._minimumValue += String(5000)
         this._maximumValue += '999999999999'
       } else {
-        this._minimumValue += String(1000000000)
+        let extract = Number(str.substring(2, str.indexOf('b')))
+        this._minimumValue += String(extract * 1000000000)
         this._maximumValue += '999999999999'
       }
     }
@@ -651,11 +655,12 @@ export class FilterService {
       if (numberSelectedFilter != 0) {
         this._minimumValue += ','
         this._maximumValue += ','
-        this.extractMinAndMax(price, '');
+        this.extractMinAndMax(price, 'price');
         this._selectedFilter += ','
         this._selectedFilter += this._filterCategory[3];
       } else {
         this._selectedFilter = this._filterCategory[3];
+        this.extractMinAndMax(price, 'price');
       }
       numberSelectedFilter++
     }
@@ -663,13 +668,15 @@ export class FilterService {
       if (numberSelectedFilter != 0) {
         this._minimumValue += ','
         this._maximumValue += ','
-        this.extractMinAndMax(marketCap, 'market');
+        this.extractMinAndMax(marketCap, '');
         this._selectedFilter += ','
         this._selectedFilter += this._filterCategory[1];
       } else {
         this._selectedFilter = this._filterCategory[1];
-        this.extractMinAndMax(marketCap, 'market');
+        this.extractMinAndMax(marketCap, '');
+
       }
+      numberSelectedFilter++
     }
 
     if (categorySorter != '') {
@@ -696,21 +703,16 @@ export class FilterService {
         max: this._maximumValue,
         filterBy: this._selectedFilter
       }
-    } else {
-      this._config.params = {
-        sortBy: 'powerConsumption',
-        order: 'asc',
-        min: '0',
-        max: '999999999999',
-        filterBy: 'powerConsumption'
-      }
-    }
+      this.axiosGetBlockchainsRequest(Routes.makePath(Routes.BLOCKCHAINS_ENDPOINT), this._config)
+      this._maximumValue = ''
+      this._minimumValue = ''
+      this._selectedFilter = this._filterCategory[0]
+      this._selectedOrder = ''
 
-    this.axiosGetBlockchainsRequest(Routes.makePath(Routes.BLOCKCHAINS_ENDPOINT), this._config)
-    this._maximumValue = ''
-    this._minimumValue = ''
-    this._selectedFilter = this._filterCategory[0]
-    this._selectedOrder = ''
+    } else {
+      this._config.params = {}
+      this.axiosGetBlockchainsRequest(Routes.makePath(Routes.BLOCKCHAINS_ENDPOINT), this._config)
+    }
   }
 
   private getAllBlockchains() {
