@@ -6,11 +6,11 @@ export class MarketCapComparator implements BlockchainModelComparator {
         let valueOne = blockchainOne.marketCap;
         let valueTwo = blockchainTwo.marketCap;
 
-        if(valueOne > valueTwo) {
+        if (valueOne > valueTwo) {
             return 1;
         }
 
-        if(valueOne < valueTwo) {
+        if (valueOne < valueTwo) {
             return -1;
         }
 

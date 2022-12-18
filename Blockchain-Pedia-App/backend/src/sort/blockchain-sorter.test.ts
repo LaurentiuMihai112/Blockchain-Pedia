@@ -1,9 +1,12 @@
 import {
     expectedResultMarketCapCompAsc,
     expectedResultMarketCapCompDesc,
-    expectedResultPowerConsumptionCompAsc, expectedResultPowerConsumptionCompDesc,
-    expectedResultPricePerTransactionCompAsc, expectedResultPricePerTransactionCompDesc,
-    expectedResultTransactionCountCompAsc, expectedResultTransactionCountCompDesc,
+    expectedResultPowerConsumptionCompAsc,
+    expectedResultPowerConsumptionCompDesc,
+    expectedResultPricePerTransactionCompAsc,
+    expectedResultPricePerTransactionCompDesc,
+    expectedResultTransactionCountCompAsc,
+    expectedResultTransactionCountCompDesc,
     mockedBlockchainArr
 } from "./__mocks__/mocked-constants";
 import {MarketCapComparator} from "./impl/market-cap-comparator";
@@ -14,7 +17,7 @@ import {PricePerTransactionComparator} from "./impl/price-per-transaction-compar
 import {TransactionCountComparator} from "./impl/transaction-count-comparator";
 
 describe('Blockchain Sorter Tests', () => {
-    it("Market Cap Comparator Ascending Test",  () => {
+    it("Market Cap Comparator Ascending Test", () => {
         // Given
         let comparator = new MarketCapComparator()
         let sorter = new BlockchainSorter()
@@ -29,7 +32,7 @@ describe('Blockchain Sorter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Market Cap Comparator Descending Test",  () => {
+    it("Market Cap Comparator Descending Test", () => {
         // Given
         let comparator = new MarketCapComparator()
         let sorter = new BlockchainSorter()
@@ -44,7 +47,7 @@ describe('Blockchain Sorter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Power Consumption Comparator Ascending Test",  () => {
+    it("Power Consumption Comparator Ascending Test", () => {
         // Given
         let comparator = new PowerConsumptionComparator()
         let sorter = new BlockchainSorter()
@@ -59,7 +62,7 @@ describe('Blockchain Sorter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Power Consumption Comparator Descending Test",  () => {
+    it("Power Consumption Comparator Descending Test", () => {
         // Given
         let comparator = new PowerConsumptionComparator()
         let sorter = new BlockchainSorter()
@@ -74,7 +77,7 @@ describe('Blockchain Sorter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Price Per Transaction Comparator Ascending Test",  () => {
+    it("Price Per Transaction Comparator Ascending Test", () => {
         // Given
         let comparator = new PricePerTransactionComparator()
         let sorter = new BlockchainSorter()
@@ -89,7 +92,7 @@ describe('Blockchain Sorter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Price Per Transaction Comparator Descending Test",  () => {
+    it("Price Per Transaction Comparator Descending Test", () => {
         // Given
         let comparator = new PricePerTransactionComparator()
         let sorter = new BlockchainSorter()
@@ -104,7 +107,7 @@ describe('Blockchain Sorter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Transaction Count Comparator Ascending Test",  () => {
+    it("Transaction Count Comparator Ascending Test", () => {
         // Given
         let comparator = new TransactionCountComparator()
         let sorter = new BlockchainSorter()
@@ -119,7 +122,7 @@ describe('Blockchain Sorter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Transaction Count Comparator Descending Test",  () => {
+    it("Transaction Count Comparator Descending Test", () => {
         // Given
         let comparator = new TransactionCountComparator()
         let sorter = new BlockchainSorter()

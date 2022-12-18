@@ -18180,4 +18180,595 @@ Using cached data
   filterBy: 'powerConsumption,marketCap',
   min: '-1,5018115297',
   max: '-1,-1'
+}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0'
 }
+
+Using cached data
+{}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=-1&max=9999999999999&filterBy=category
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '-1',
+  max: '9999999999999',
+  filterBy: 'category'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '-1',
+  max: '9999999999999',
+  filterBy: 'category'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=-2,0&max=9999999999999,100000000&filterBy=category,transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '-2,0',
+  max: '9999999999999,100000000',
+  filterBy: 'category,transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '-2,0',
+  max: '9999999999999,100000000',
+  filterBy: 'category,transactionCount'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=100000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '100000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=100000000&max=200000000&filterBy=transactionCount
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '100000000',
+  max: '200000000',
+  filterBy: 'transactionCount'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '100000000',
+  max: '200000000',
+  filterBy: 'transactionCount'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=0&max=1000&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '1000',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '0',
+  max: '1000',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=1000&max=2000&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '1000',
+  max: '2000',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '1000',
+  max: '2000',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=2000&max=3000&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '2000',
+  max: '3000',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '2000',
+  max: '3000',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=3000&max=5000&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '3000',
+  max: '5000',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '3000',
+  max: '5000',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=transactionCount&order=desc&min=5000&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '5000',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'transactionCount',
+  order: 'desc',
+  min: '5000',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0'
+}
+
+Using cached data
+REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0
+
+Query
+Body
+{}{}
+
+Using cached data
+
+Headers
+{}{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0'
+}
+
+Using cached data
+REQUEST GET /blockchains/all
+Body
+{}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0
+
+Headers
+Body
+{}
+Headers
+{}{}
+Query
+
+Query
+{}{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0'
+}
+
+
+
+Using cached data
+Using cached data
+{}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc&min=0&max=999999999999&filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}
+
+Using cached data
+{
+  sortBy: 'powerConsumption',
+  order: 'asc',
+  min: '0',
+  max: '999999999999',
+  filterBy: 'powerConsumption'
+}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=10000000000&minPricePerTransaction=0&maxTransactionCount=10000000000&minTransactionCount=0&maxMarketCap=10000000000&minMarketCap=0
+{}Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '10000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '10000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '10000000000',
+  minMarketCap: '0'
+}
+
+Using cached data

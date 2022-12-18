@@ -294,7 +294,7 @@ export class FilterService {
     this._transactionCounts = value;
   }
 
-  private _powerConsumptions = ['Any', '0 - 1000', '1000 - 2000', '2000 - 3000', '3000 - 5000', '>5000']
+  private _powerConsumptions = ['Any', '0 - 1000', '1000 - 2000', '2000 - 3000', '3000 - 5000', '> 5000']
 
   get powerConsumptions(): string[] {
     return this._powerConsumptions;
@@ -314,7 +314,7 @@ export class FilterService {
     this._pricePerTrs = value;
   }
 
-  private _marketCaps = ['Any', '0 - 100.', '100 - 300', '300 - 500', '500 - 1000', '> 1000']
+  private _marketCaps = ['Any', '0 - 100 mil.', '100 mil. - 300 mil.', '300 mil. - 500 mil.', '500 mil. - 1 bil.', '> 1 bil.']
 
   get marketCaps(): string[] {
     return this._marketCaps;
@@ -656,7 +656,6 @@ export class FilterService {
       numberSelectedFilter++
     }
     if (marketCap != 'Any') {
-
       if (numberSelectedFilter != 0) {
         this._minimumValue += ','
         this._maximumValue += ','

@@ -2,8 +2,8 @@ import {BlockchainSpec} from "../blockchain-spec";
 import {BlockchainModel} from "../../model/blockchain-model";
 
 export class PricePerTransactionSpec implements BlockchainSpec {
-    private minValue: number;
-    private maxValue: number;
+    private readonly minValue: number;
+    private readonly maxValue: number;
 
     constructor(minValue: number, maxValue: number) {
         this.minValue = minValue;

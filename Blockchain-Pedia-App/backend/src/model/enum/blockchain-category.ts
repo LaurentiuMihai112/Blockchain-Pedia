@@ -3,7 +3,7 @@ export enum BlockchainCategory {
 }
 
 export function getBlockchainCategoryFromText(text: string): BlockchainCategory | null {
-    switch(text) {
+    switch (text) {
         case "PUBLIC":
             return BlockchainCategory.PUBLIC
 

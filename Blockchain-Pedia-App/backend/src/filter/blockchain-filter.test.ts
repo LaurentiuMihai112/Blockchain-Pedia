@@ -15,9 +15,9 @@ import {BlockchainFilter} from "./blockchain-filter";
 
 
 describe('Blockchain Filter Tests', () => {
-    it("Market Cap Test",  () => {
+    it("Market Cap Test", () => {
         // Given
-        let blockchainSpec = new MarketCapSpec(0,2000)
+        let blockchainSpec = new MarketCapSpec(0, 2000)
         let spec = new BlockchainFilter()
 
         let blockchainModelArr = mockedBlockchainArray
@@ -30,7 +30,7 @@ describe('Blockchain Filter Tests', () => {
         expect(actualResponse).toEqual(expectedResponse)
     })
 
-    it("Category Test",  () => {
+    it("Category Test", () => {
         // Given
         let blockchainSpec = new CategorySpec(BlockchainCategory.HYBRID)
         let spec = new BlockchainFilter()
@@ -46,9 +46,9 @@ describe('Blockchain Filter Tests', () => {
     })
 
 
-    it("Price Per Transaction Test",  () => {
+    it("Price Per Transaction Test", () => {
         // Given
-        let blockchainSpec = new PricePerTransactionSpec(0,20000000000)
+        let blockchainSpec = new PricePerTransactionSpec(0, 20000000000)
         let spec = new BlockchainFilter()
 
         let blockchainModelArr = mockedBlockchainArray
@@ -62,9 +62,9 @@ describe('Blockchain Filter Tests', () => {
     })
 
 
-    it("Transaction Count Test",  () => {
+    it("Transaction Count Test", () => {
         // Given
-        let blockchainSpec = new TransactionCountSpec(0,1000000000)
+        let blockchainSpec = new TransactionCountSpec(0, 1000000000)
         let spec = new BlockchainFilter()
 
         let blockchainModelArr = mockedBlockchainArray

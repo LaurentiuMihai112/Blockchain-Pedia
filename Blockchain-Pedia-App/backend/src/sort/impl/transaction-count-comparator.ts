@@ -6,11 +6,11 @@ export class TransactionCountComparator implements BlockchainModelComparator {
         let valueOne = blockchainOne.transactionCount;
         let valueTwo = blockchainTwo.transactionCount;
 
-        if(valueOne > valueTwo) {
+        if (valueOne > valueTwo) {
             return 1;
         }
 
-        if(valueOne < valueTwo) {
+        if (valueOne < valueTwo) {
             return -1;
         }
 

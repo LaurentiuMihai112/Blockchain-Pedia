@@ -3,7 +3,7 @@ import {BlockchainModel} from "../../model/blockchain-model";
 import {BlockchainSpec} from "../blockchain-spec";
 
 export class CategorySpec implements BlockchainSpec {
-    private category: BlockchainCategory;
+    private readonly category: BlockchainCategory;
 
 
     constructor(category: BlockchainCategory) {

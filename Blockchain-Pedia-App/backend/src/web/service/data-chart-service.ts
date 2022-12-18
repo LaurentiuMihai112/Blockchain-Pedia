@@ -8,6 +8,8 @@ const backgroundColour = 'white';
 const chartJSNodeCanvas = new ChartJSNodeCanvas({width, height, backgroundColour});
 
 export class DataChartService {
+    private static _configuration = {};
+
     public static async getChart(chartType: string): Promise<string> {
         let data = fs.readFileSync('request_log.txt', 'utf8');
 
@@ -22,10 +24,10 @@ export class DataChartService {
             .map(line => {
                 let queryParamsStr = line.split("&")
                 let splitQueryParams = queryParamsStr.map(s => {
-                    let splitted = s.split("=")
+                    let split = s.split("=")
                     return {
-                        key: splitted[0],
-                        value: splitted[1]
+                        key: split[0],
+                        value: split[1]
                     }
                 })
                 let queryParamsObj = {}
@@ -36,7 +38,7 @@ export class DataChartService {
                 return queryParamsObj
             })
 
-        switch(chartType) {
+        switch (chartType) {
             case "order": {
                 return await this.generateChart(await this.buildChartForOrderConfiguration(queryParams))
             }
@@ -53,10 +55,10 @@ export class DataChartService {
     }
 
     private static async makeId() {
-        var result           = '';
-        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        var charactersLength = characters.length;
-        for ( var i = 0; i < 10; i++ ) {
+        let result = '';
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        for (let i = 0; i < 10; i++) {
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
         return result;
@@ -64,8 +66,7 @@ export class DataChartService {
 
     private static async generateChart(configuration: ChartTypeRegistry): Promise<string> {
         // @ts-ignore
-        const dataUrl = await chartJSNodeCanvas.renderToDataURL(configuration);
-        const base64Image = dataUrl
+        const base64Image = await chartJSNodeCanvas.renderToDataURL(configuration);
 
         let base64Data = base64Image.replace(/^data:image\/png;base64,/, "");
 
@@ -91,7 +92,7 @@ export class DataChartService {
             }
         })
 
-        const configuration = {
+        this._configuration = {
             type: 'bar',
             data: {
                 labels: ["# of requests using 'order'"],
@@ -120,7 +121,7 @@ export class DataChartService {
         }
 
         //@ts-ignore
-        return configuration
+        return this._configuration
     }
 
     private static async buildChartForSortConfiguration(queryParams: object[]): Promise<ChartTypeRegistry> {
@@ -130,7 +131,7 @@ export class DataChartService {
         let numberOfTransactionCount = 0;
         queryParams.forEach(queryParam => {
             // @ts-ignore
-            switch(queryParam['sort']) {
+            switch (queryParam['sort']) {
                 case 'powerConsumption': {
                     numberOfPowerConsumption += 1;
                     break;
@@ -157,7 +158,7 @@ export class DataChartService {
             }
         })
 
-        const configuration = {
+        this._configuration = {
             type: 'bar',
             data: {
                 labels: ["# of requests using 'sort'"],
@@ -198,7 +199,7 @@ export class DataChartService {
         }
 
         //@ts-ignore
-        return configuration
+        return this._configuration
     }
 
     private static async buildChartForFilterConfiguration(queryParams: object[]): Promise<ChartTypeRegistry> {
@@ -208,7 +209,7 @@ export class DataChartService {
         let numberOfTransactionCount = 0;
         queryParams.forEach(queryParam => {
             // @ts-ignore
-            switch(queryParam['filter']) {
+            switch (queryParam['filter']) {
                 case 'powerConsumption': {
                     numberOfPowerConsumption += 1;
                     break;
@@ -235,7 +236,7 @@ export class DataChartService {
             }
         })
 
-        const configuration = {
+        this._configuration = {
             type: 'bar',
             data: {
                 labels: ["# of requests using 'filter'"],
@@ -276,6 +277,6 @@ export class DataChartService {
         }
 
         //@ts-ignore
-        return configuration
+        return this._configuration
     }
 }

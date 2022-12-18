@@ -1,13 +1,10 @@
 import {CoinGeckoApi} from "../api/coingecko-api";
-import mocked = jest.mocked;
 import {EthereumCrawler} from "./ethereum-crawler";
 import {HttpJsonResponse} from "../http/http-json-response";
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
 import {BlockchainModel} from "../../model/blockchain-model";
-import {
-    ethereumCrawlerJsonResponseFailPath,
-    ethereumCrawlerJsonResponseHappyPath
-} from "./__mocks__/mock-constants";
+import {ethereumCrawlerJsonResponseFailPath, ethereumCrawlerJsonResponseHappyPath} from "./__mocks__/mock-constants";
+import mocked = jest.mocked;
 
 jest.mock('../api/coingecko-api.ts', () => {
     return {
@@ -59,7 +56,7 @@ describe('Ethereum Crawler Tests', () => {
         // When & Then
         // @ts-ignore
         const ethereumCrawler = new EthereumCrawler(MockedCoinGeckoApi)
-        let errorHasBeenThrown: boolean = false;
+        let errorHasBeenThrown: boolean;
         try {
             await ethereumCrawler.crawl()
             errorHasBeenThrown = false;
@@ -80,7 +77,7 @@ describe('Ethereum Crawler Tests', () => {
         // When & Then
         // @ts-ignore
         const ethereumCrawler = new EthereumCrawler(MockedCoinGeckoApi)
-        let errorHasBeenThrown: boolean = false;
+        let errorHasBeenThrown: boolean;
         try {
             await ethereumCrawler.crawl()
             errorHasBeenThrown = false;

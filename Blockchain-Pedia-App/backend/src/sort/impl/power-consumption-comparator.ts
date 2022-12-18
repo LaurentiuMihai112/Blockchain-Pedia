@@ -6,11 +6,11 @@ export class PowerConsumptionComparator implements BlockchainModelComparator {
         let valueOne = blockchainOne.powerConsumption;
         let valueTwo = blockchainTwo.powerConsumption;
 
-        if(valueOne > valueTwo) {
+        if (valueOne > valueTwo) {
             return 1;
         }
 
-        if(valueOne < valueTwo) {
+        if (valueOne < valueTwo) {
             return -1;
         }
 

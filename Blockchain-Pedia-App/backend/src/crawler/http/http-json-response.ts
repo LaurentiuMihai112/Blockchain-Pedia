@@ -1,11 +1,10 @@
 export class HttpJsonResponse {
-    private _statusCode: number;
-    private _bodyAsJson: object;
-
     constructor(statusCode: number, bodyAsJson: any) {
         this._statusCode = statusCode;
         this._bodyAsJson = bodyAsJson;
     }
+
+    private _statusCode: number;
 
     get statusCode(): number {
         return this._statusCode;
@@ -14,6 +13,8 @@ export class HttpJsonResponse {
     set statusCode(value: number) {
         this._statusCode = value;
     }
+
+    private _bodyAsJson: object;
 
     get bodyAsJson(): object {
         return this._bodyAsJson;

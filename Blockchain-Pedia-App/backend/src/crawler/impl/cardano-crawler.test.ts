@@ -1,10 +1,10 @@
 import {CoinGeckoApi} from "../api/coingecko-api";
-import mocked = jest.mocked;
 import {CardanoCrawler} from "./cardano-crawler";
 import {HttpJsonResponse} from "../http/http-json-response";
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
 import {BlockchainModel} from "../../model/blockchain-model";
 import {cardanoCrawlerJsonResponseFailPath, cardanoCrawlerJsonResponseHappyPath} from "./__mocks__/mock-constants";
+import mocked = jest.mocked;
 
 jest.mock('../api/coingecko-api.ts', () => {
     return {
@@ -56,7 +56,7 @@ describe('Cardano Crawler Tests', () => {
         // When & Then
         // @ts-ignore
         const cardanoCrawler = new CardanoCrawler(MockedCoinGeckoApi)
-        let errorHasBeenThrown: boolean = false;
+        let errorHasBeenThrown: boolean;
         try {
             await cardanoCrawler.crawl()
             errorHasBeenThrown = false;
@@ -77,7 +77,7 @@ describe('Cardano Crawler Tests', () => {
         // When & Then
         // @ts-ignore
         const cardanoCrawler = new CardanoCrawler(MockedCoinGeckoApi)
-        let errorHasBeenThrown: boolean = false;
+        let errorHasBeenThrown: boolean;
         try {
             await cardanoCrawler.crawl()
             errorHasBeenThrown = false;

@@ -9,7 +9,7 @@ export class Http {
             method: 'get',
             url
         })
-            .then(function (response: AxiosResponse<any>) {
+            .then(function (response: AxiosResponse) {
                 let statusCode = response.status
 
                 if (statusCode < 200 || statusCode > 299) {

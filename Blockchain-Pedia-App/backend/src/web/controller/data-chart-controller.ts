@@ -1,7 +1,6 @@
-import {Request, response, Response} from "express";
+import {Request, Response} from "express";
 import {DataChartService} from "../service/data-chart-service";
 import * as fs from "fs";
-import * as path from "path";
 
 export class DataChartController {
 
@@ -22,17 +21,17 @@ export class DataChartController {
 
     public static getChartFile = async (req: Request, res: Response): Promise<void> => {
         const {name} = req.query;
-        if(name == undefined) {
+        if (name == undefined) {
             res.status(400).send()
             return;
         }
 
-        if(!fs.existsSync('./' + name)) {
+        if (!fs.existsSync('./' + name)) {
             res.status(404).send()
             return;
         }
 
-        var options = {
+        let options = {
             root: '.'
         };
 

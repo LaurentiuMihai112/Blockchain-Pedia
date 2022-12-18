@@ -1,12 +1,10 @@
 import {CoinGeckoApi} from "../api/coingecko-api";
-import mocked = jest.mocked;
 import {TronCrawler} from "./tron-crawler";
 import {HttpJsonResponse} from "../http/http-json-response";
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
 import {BlockchainModel} from "../../model/blockchain-model";
-import {
-    tronCrawlerJsonResponseFailPath, tronCrawlerJsonResponseHappyPath
-} from "./__mocks__/mock-constants";
+import {tronCrawlerJsonResponseFailPath, tronCrawlerJsonResponseHappyPath} from "./__mocks__/mock-constants";
+import mocked = jest.mocked;
 
 jest.mock('../api/coingecko-api.ts', () => {
     return {
@@ -58,7 +56,7 @@ describe('Tron Crawler Tests', () => {
         // When & Then
         // @ts-ignore
         const tronCrawler = new TronCrawler(MockedCoinGeckoApi)
-        let errorHasBeenThrown: boolean = false;
+        let errorHasBeenThrown: boolean;
         try {
             await tronCrawler.crawl()
             errorHasBeenThrown = false;
@@ -79,7 +77,7 @@ describe('Tron Crawler Tests', () => {
         // When & Then
         // @ts-ignore
         const tronCrawler = new TronCrawler(MockedCoinGeckoApi)
-        let errorHasBeenThrown: boolean = false;
+        let errorHasBeenThrown: boolean;
         try {
             await tronCrawler.crawl()
             errorHasBeenThrown = false;

@@ -1,14 +1,6 @@
 import {BlockchainCategory} from "./enum/blockchain-category";
 
 export class BlockchainModel {
-    private _name: string;
-    private _baseUrl: string;
-    private _category: BlockchainCategory;
-    private _transactionCount: number;
-    private _powerConsumption: number; // in MWh
-    private _pricePerTransaction: number; // in USD
-    private _marketCap: number; // in USD
-
     constructor(name: string, baseUrl: string, category: BlockchainCategory, transactionCount: number,
                 powerConsumption: number, pricePerTransaction: number, marketCap: number) {
         this._name = name;
@@ -20,6 +12,8 @@ export class BlockchainModel {
         this._marketCap = marketCap;
     }
 
+    private _name: string;
+
     get name(): string {
         return this._name;
     }
@@ -27,6 +21,8 @@ export class BlockchainModel {
     set name(value: string) {
         this._name = value;
     }
+
+    private _baseUrl: string;
 
     get baseUrl(): string {
         return this._baseUrl;
@@ -36,6 +32,8 @@ export class BlockchainModel {
         this._baseUrl = value;
     }
 
+    private _category: BlockchainCategory;
+
     get category(): BlockchainCategory {
         return this._category;
     }
@@ -43,6 +41,8 @@ export class BlockchainModel {
     set category(value: BlockchainCategory) {
         this._category = value;
     }
+
+    private _transactionCount: number;
 
     get transactionCount(): number {
         return this._transactionCount;
@@ -52,6 +52,8 @@ export class BlockchainModel {
         this._transactionCount = value;
     }
 
+    private _powerConsumption: number; // in MWh
+
     get powerConsumption(): number {
         return this._powerConsumption;
     }
@@ -60,6 +62,8 @@ export class BlockchainModel {
         this._powerConsumption = value;
     }
 
+    private _pricePerTransaction: number; // in USD
+
     get pricePerTransaction(): number {
         return this._pricePerTransaction;
     }
@@ -67,6 +71,8 @@ export class BlockchainModel {
     set pricePerTransaction(value: number) {
         this._pricePerTransaction = value;
     }
+
+    private _marketCap: number; // in USD
 
     get marketCap(): number {
         return this._marketCap;

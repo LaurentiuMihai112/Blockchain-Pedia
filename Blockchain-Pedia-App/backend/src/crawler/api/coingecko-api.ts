@@ -12,7 +12,7 @@ export class CoinGeckoApi {
 
     public async timeout(delayTime: number) {
         await this.delay(delayTime)
-        return new HttpJsonResponse(503,`Request aborted as it took longer than ${delayTime}ms`);
+        return new HttpJsonResponse(503, `Request aborted as it took longer than ${delayTime}ms`);
     }
 
     private delay(ms: number) {

@@ -6,11 +6,11 @@ export class PricePerTransactionComparator implements BlockchainModelComparator 
         let valueOne = blockchainOne.pricePerTransaction;
         let valueTwo = blockchainTwo.pricePerTransaction;
 
-        if(valueOne > valueTwo) {
+        if (valueOne > valueTwo) {
             return 1;
         }
 
-        if(valueOne < valueTwo) {
+        if (valueOne < valueTwo) {
             return -1;
         }
 

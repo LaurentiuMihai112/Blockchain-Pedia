@@ -25,7 +25,7 @@ export class EthereumCrawler extends WebCrawler {
         // Perform HTTP request
         let httpResponse: HttpJsonResponse = await Promise.race([this.coinGeckoApi.getCoinCurrentData(EthereumCrawler.COINGECKO_COIN_ID), this.coinGeckoApi.timeout(WebCrawler.delayTime)])
         if (httpResponse.statusCode != 200) {
-            throw new CustomError(`${httpResponse.bodyAsJson}`,httpResponse.statusCode)
+            throw new CustomError(`${httpResponse.bodyAsJson}`, httpResponse.statusCode)
         }
 
         // Get data

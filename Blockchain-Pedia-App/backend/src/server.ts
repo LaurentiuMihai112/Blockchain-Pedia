@@ -1,6 +1,5 @@
 import express, {Express} from 'express';
 import routes from "./web/routes"
-import {handleError} from "./web/middleware/error-handler-middleware";
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 
