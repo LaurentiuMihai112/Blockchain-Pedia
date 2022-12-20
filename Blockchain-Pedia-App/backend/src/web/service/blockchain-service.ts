@@ -11,6 +11,7 @@ import {BlockchainSorter} from "../../sort/blockchain-sorter";
 import {
     PricePerTransactionAndMarketCapComparator
 } from "../../sort/impl/price-per-transaction-and-market-cap-comparator";
+import deepcopy from "deepcopy";
 
 function isNumericValue(value: string): boolean {
     return !isNaN(Number(value))
@@ -30,21 +31,22 @@ export class BlockchainService {
                                             maxTransactionCount: string,
                                             maxPowerConsumption: string,
                                             minPowerConsumption: string): Promise<BlockchainModel[] | null> {
-        let blockchains = await BlockchainService.findAll();
+        let blockchainsList = await BlockchainService.findAll();
+        let blockchains = deepcopy(blockchainsList);
 
         // Filter by blockchain type
         let blockchainType = getBlockchainCategoryFromText(type)
         if (blockchainType == null) {
             return null;
         }
-        console.log("_________________RATING_________________")
+        // console.log("_________________RATING_________________")
         blockchains = this.rateBlockchains(blockchains, minPricePerTransaction, maxPricePerTransaction, minMarketCap, maxMarketCap, minTransactionCount, maxTransactionCount, maxPowerConsumption, minPowerConsumption)
         // Sort recommendations
         blockchains = this.sortRecommendationsByRating(blockchains)
-        for (const blockchainElement of blockchains) {
-            console.log(blockchainElement.rating)
-            console.log('\n')
-        }
+        // for (const blockchainElement of blockchains) {
+        //     console.log(blockchainElement.rating)
+        //     console.log('\n')
+        // }
 
         return blockchains
     }

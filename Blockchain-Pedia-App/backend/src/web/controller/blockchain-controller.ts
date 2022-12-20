@@ -23,7 +23,12 @@ export class BlockchainController {
             return;
         }
         try {
-            blockchains = deepcopy(await BlockchainService.findAll());
+            let blockchainsList = await BlockchainService.findAll();
+            blockchains = deepcopy(blockchainsList);
+            console.log("______________VALUES_____________")
+            for (const blockchain of blockchains) {
+                console.log(blockchain.pricePerTransaction)
+            }
         } catch (error) {
             console.log("Error***********\n")
             res.status(500).send("Error while fetching blockchains");
@@ -121,19 +126,18 @@ export class BlockchainController {
             maxPowerConsumption,
             minPowerConsumption,
         } = req.query;
-        const blockchains =
-            deepcopy(await BlockchainService.findRecommendations(
-                // @ts-ignore
-                type,
-                minPricePerTransaction,
-                maxPricePerTransaction,
-                minMarketCap,
-                maxMarketCap,
-                minTransactionCount,
-                maxTransactionCount,
-                maxPowerConsumption,
-                minPowerConsumption
-            ))
+        const blockchains = await BlockchainService.findRecommendations(
+            // @ts-ignore
+            type,
+            minPricePerTransaction,
+            maxPricePerTransaction,
+            minMarketCap,
+            maxMarketCap,
+            minTransactionCount,
+            maxTransactionCount,
+            maxPowerConsumption,
+            minPowerConsumption
+        )
 
         if (blockchains == null) {
             res.status(400).send("Found invalid values in request body!").end()
