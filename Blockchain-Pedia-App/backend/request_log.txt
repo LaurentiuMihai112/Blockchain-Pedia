@@ -19956,4 +19956,1448 @@ Using cached data
   min: '0,1000',
   max: '100000000,999999999999',
   filterBy: 'transactionCount,marketCap'
+}REQUEST GET /blockchains/all?filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption' }
+
+REQUEST GET /blockchains/all?filterBy=powerConsumption&min=-1&max=-1
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption', min: '-1', max: '-1' }
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054516,
+  _marketCap: 5019300893,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054516,
+  _marketCap: 5019300893,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ filterBy: 'powerConsumption', min: '-1', max: '-1' }REQUEST GET /blockchains/all?filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption' }
+
+REQUEST GET /blockchains/all?filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption' }
+
+REQUEST GET /blockchains/all?sortBy=transactionCount&order=asc&filterBy=powerConsumption,marketCap&min=-1,5018115297&max=-1,-1
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'asc',
+  filterBy: 'powerConsumption,marketCap',
+  min: '-1,5018115297',
+  max: '-1,-1'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=transactionCount&order=asc&filterBy=powerConsumption,marketCap&min=-1,5018115297&max=-1,-1
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'asc',
+  filterBy: 'powerConsumption,marketCap',
+  min: '-1,5018115297',
+  max: '-1,-1'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=transactionCount&order=asc&filterBy=powerConsumption,marketCap&min=-1,5018115297&max=-1,-1
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'asc',
+  filterBy: 'powerConsumption,marketCap',
+  min: '-1,5018115297',
+  max: '-1,-1'
+}
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054507,
+  _marketCap: 5019300893,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054507,
+  _marketCap: 5019300893,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{
+  sortBy: 'transactionCount',
+  order: 'asc',
+  filterBy: 'powerConsumption,marketCap',
+  min: '-1,5018115297',
+  max: '-1,-1'
+}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054507,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054507,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054507,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054507,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{}REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054514,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054514,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{}REQUEST GET /blockchains/all?filterBy=transactionCount&min=0&max=1
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'transactionCount', min: '0', max: '1' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054514,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054514,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ filterBy: 'transactionCount', min: '0', max: '1' }REQUEST GET /blockchains/all?filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption' }
+
+REQUEST GET /blockchains/all?sortBy=transactionCount&order=asc&filterBy=powerConsumption,marketCap,transactionCount&min=-1,5018115297&max=-1,-1
+Body
+{}
+Headers
+{}
+Query
+{
+  sortBy: 'transactionCount',
+  order: 'asc',
+  filterBy: 'powerConsumption,marketCap,transactionCount',
+  min: '-1,5018115297',
+  max: '-1,-1'
+}
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054514,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054514,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{
+  sortBy: 'transactionCount',
+  order: 'asc',
+  filterBy: 'powerConsumption,marketCap,transactionCount',
+  min: '-1,5018115297',
+  max: '-1,-1'
+}REQUEST GET /blockchains/all?filterBy=powerConsumption,marketCap&min=-1&max=-1,2
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption,marketCap', min: '-1', max: '-1,2' }
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054545,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054545,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ filterBy: 'powerConsumption,marketCap', min: '-1', max: '-1,2' }REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}Error***********
+REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.05461,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.05461,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ sortBy: 'powerConsumption', order: 'asc' }REQUEST GET /blockchains/all?sortBy=powerConsumption&order=asc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'asc' }
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054625,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054625,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ sortBy: 'powerConsumption', order: 'asc' }REQUEST GET /blockchains/all?sortBy=powerConsumption&order=desc
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'desc' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054625,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054625,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ sortBy: 'powerConsumption', order: 'desc' }REQUEST GET /blockchains/all?sortBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054625,
+  _marketCap: 5014051111,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012812589.5005,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054625,
+  _marketCap: 5014051111,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ sortBy: 'powerConsumption' }REQUEST GET /blockchains/all
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Fetching new Data from API
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{}REQUEST GET /blockchains/all?filterBy=transactionCount&min=0&max=1
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'transactionCount', min: '0', max: '1' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+REQUEST GET /blockchains/all?sortBy=powerConsumption&order=desc
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ filterBy: 'transactionCount', min: '0', max: '1' }Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption', order: 'desc' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ sortBy: 'powerConsumption', order: 'desc' }REQUEST GET /blockchains/all?filterBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption' }
+
+REQUEST GET /blockchains/all?filterBy=powerConsumption,marketCap&min=-1&max=-1,2
+Body
+{}
+Headers
+{}
+Query
+{ filterBy: 'powerConsumption,marketCap', min: '-1', max: '-1,2' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ filterBy: 'powerConsumption,marketCap', min: '-1', max: '-1,2' }REQUEST GET /blockchains/all?sortBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ sortBy: 'powerConsumption' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ sortBy: 'powerConsumption' }REQUEST GET /blockchains/recommendations
+Body
+{}
+Headers
+{}
+Query
+{}
+
+Using cached data
+REQUEST GET /blockchains/all?order=asc&sortBy=powerConsumption
+Body
+{}
+Headers
+{}
+Query
+{ order: 'asc', sortBy: 'powerConsumption' }
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054663,
+  _marketCap: 5027122261,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{ order: 'asc', sortBy: 'powerConsumption' }REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+Query
+{}
+
+Using cached data
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+Query
+{}
+
+Using cached data
+REQUEST GET /blockchains/recommendations
+Body
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+Headers
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+Query
+{}
+
+Using cached data
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=100000000000&minPricePerTransaction=0&maxTransactionCount=100000000000&minTransactionCount=0&maxMarketCap=100000000000&minMarketCap=0&maxPowerConsumption=100000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=100000000000&minPricePerTransaction=0&maxTransactionCount=100000000000&minTransactionCount=0&maxMarketCap=100000000000&minMarketCap=0&maxPowerConsumption=100000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=100000000000&minPricePerTransaction=0&maxTransactionCount=100000000000&minTransactionCount=0&maxMarketCap=100000000000&minMarketCap=0&maxPowerConsumption=100000000000
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?type=PUBLIC&maxPricePerTransaction=100000000000&minPricePerTransaction=0&maxTransactionCount=100000000000&minTransactionCount=0&maxMarketCap=100000000000&minMarketCap=0&maxPowerConsumption=100000000000
+Body
+{}
+Headers
+{}
+Query
+{
+  type: 'PUBLIC',
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
+}REQUEST GET /blockchains/recommendations?maxPricePerTransaction=100000000000&minPricePerTransaction=0&maxTransactionCount=100000000000&minTransactionCount=0&maxMarketCap=100000000000&minMarketCap=0&maxPowerConsumption=100000000000
+Body
+{}
+Headers
+{}
+Query
+{
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000'
+}
+
+Fetching new Data from API
+REQUEST GET /blockchains/all?maxPricePerTransaction=100000000000&minPricePerTransaction=0&maxTransactionCount=100000000000&minTransactionCount=0&maxMarketCap=100000000000&minMarketCap=0&maxPowerConsumption=100000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+
+Using cached data
+______________VALUES_____________
+BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054547,
+  _marketCap: 5031071874,
+  _rating: 1
+}BlockchainModel {
+  _name: 'Tron',
+  _baseUrl: 'https://tron.network/',
+  _category: 0,
+  _transactionCount: 92012725603.9157,
+  _powerConsumption: 0.001,
+  _pricePerTransaction: 0.054547,
+  _marketCap: 5031071874,
+  _rating: 1
+}Ethereum
+Tron
+Cardano
+Solana
+Polkadot
+Stellar
+Litecoin
+Bitcoin
+Tether
+Binance Coin (BNB)
+USD Coin (USDC)
+Binance USD (BUSD)
+XRP
+Dogecoin (DOGE)
+Polygon (MATIC)
+Lido Staked Ether (STETH)
+OkbCrawler
+Dai (DAI)
+Uniswap (UNI)
+Avalanche (AVAX)
+{
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}REQUEST GET /blockchains/recommendations?maxPricePerTransaction=100000000000&minPricePerTransaction=0&maxTransactionCount=100000000000&minTransactionCount=0&maxMarketCap=100000000000&minMarketCap=0&maxPowerConsumption=100000000000&minPowerConsumption=0
+Body
+{}
+Headers
+{}
+Query
+{
+  maxPricePerTransaction: '100000000000',
+  minPricePerTransaction: '0',
+  maxTransactionCount: '100000000000',
+  minTransactionCount: '0',
+  maxMarketCap: '100000000000',
+  minMarketCap: '0',
+  maxPowerConsumption: '100000000000',
+  minPowerConsumption: '0'
+}
+
+Fetching new Data from API
+AxiosError: Request failed with status code 429
+    at settle (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\core\settle.js:19:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\Lucia\Desktop\git test\Blockchain-Pedia\Blockchain-Pedia-App\backend\node_modules\axios\lib\adapters\http.js:495:11)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'ERR_BAD_REQUEST',
+  config: [Object],
+  request: [ClientRequest],
+  response: [Object]
 }
