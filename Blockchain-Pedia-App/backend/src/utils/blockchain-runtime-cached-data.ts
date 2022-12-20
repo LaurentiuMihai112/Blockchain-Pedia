@@ -29,7 +29,7 @@ export class BlockchainRuntimeCachedData {
     static lastUpdated: number | any = null
 
     public static async getData(): Promise<BlockchainModel[]> {
-        if ((moment(this.lastUpdated).add(this.MINUTES_DELTA_FOR_CACHING, 'm').toDate() <= moment(Date.now()).toDate()) || this.lastUpdated == null) {
+        if ((moment(this.lastUpdated).add(this.MINUTES_DELTA_FOR_CACHING, 'm').toDate() <= moment(Date.now()).toDate()) || this.lastUpdated == null || this.blockchainData.length == 0) {
             BlockchainRuntimeCachedData.blockchainData = []
             console.log("Fetching new Data from API\n")
             this.lastUpdated = Date.now()

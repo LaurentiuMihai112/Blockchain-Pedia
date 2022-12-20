@@ -579,34 +579,16 @@ export class FilterService {
       if (str == "Public") this._minimumValue = String(-3)
       else if (str == "Private") this._minimumValue = String(-2)
       else this._minimumValue = String(-1)
-      this._maximumValue = '9999999999999'
+      this._maximumValue = this._maxFilterValue.toString()
     } else {
-      if (str[0] != '>') {
-        //first part
-        let minimum = Number(str.substring(0, str.indexOf(' ')));
-        //if contains mil in first part we multiply by 1000000
-        if (str[str.indexOf(' ') + 1] == 'm') this._minimumValue += String(minimum * 1000000)
-        else if (str[str.indexOf(' ') + 1] == 'b') this._minimumValue += String(minimum * 1000000000)
-        else this._minimumValue += minimum
-
-        //for second part
-        let next = str.substring(str.indexOf('-') + 2, str.length)
-        if (next.indexOf('m') != -1) {
-          this._maximumValue += String(Number(next.substring(0, next.indexOf('m'))) * 1000000);
-        } else if (next.indexOf('b') != -1) {
-          let number = Number(next.substring(0, next.indexOf(' ')))
-          this._maximumValue += String(number * 1000000000)
-        } else this._maximumValue += next
-      } else if (field == 'price') {
-        this._minimumValue += String(1000)
-        this._maximumValue += '999999999999'
-      } else if (field == 'power') {
-        this._minimumValue += String(5000)
-        this._maximumValue += '999999999999'
+      if (str.includes('>')) {
+        str = str.replace('>', '')
+        this._minimumValue += this.parseValue(str).toString()
+        this._maximumValue += this._maxFilterValue.toString()
       } else {
-        let extract = Number(str.substring(2, str.indexOf('b')))
-        this._minimumValue += String(extract * 1000000000)
-        this._maximumValue += '999999999999'
+        let values = str.split('-')
+        this._minimumValue += this.parseValue(values[0])
+        this._maximumValue += this.parseValue(values[1])
       }
     }
   }
@@ -786,13 +768,41 @@ export class FilterService {
     filter = filter.replace(' ', '')
     if (filter.includes('bil.')) {
       filter = filter.replace('bil.', '')
-      return parseInt(filter) * 1000000000
+      return parseFloat(filter) * 1000000000
     }
     if (filter.includes('mil.')) {
       filter = filter.replace('mil.', '')
-      return parseInt(filter) * 1000000
+      return parseFloat(filter) * 1000000
     }
-    let filterNumber = parseInt(filter)
-    return filterNumber
+    return parseFloat(filter)
+  }
+
+  clear() {
+    this._showCategories = false
+    this._showCategoriesSorter = false;
+    this._showTrCount = false
+    this._showTrSorter = false
+    this._showPowerConsumption = false
+    this._showPowerSorter = false
+    this._showPricePerTr = false
+    this._showPriceSorter = false
+    this._showMarketCap = false
+    this._showMarketSorter = false
+    this._selectedCategory = this._categories[0]
+    this._selectedCategorySorter = this._sorterCategory[0]
+    this._selectedTrCount = this._transactionCounts[0]
+    this._selectedTrSorter = this._sorterCategory[0]
+    this._selectedPowerConsumption = this._powerConsumptions[0]
+    this._selectedPowerConsumptionSorter = this._sorterCategory[0]
+    this._selectedPricePerTr = this._pricePerTrs[0]
+    this._selectedPriceSorter = this._sorterCategory[0]
+    this._selectedMarketCap = this._marketCaps[0]
+    this._selectedMarketSorter = this._sorterCategory[0]
+    this._selectedFilter = this._filterCategory[0]
+    this._selectedOrder = 'asc'
+    this._selectedSorterField = this._sorterCategoryField[0]
+    this._minimumValue = ''
+    this._maximumValue = ''
+    this.updateBlockchainList(this.selectedCategory, this.selectedTrCount, this.selectedPowerConsumption, this.selectedPricePerTr, this.selectedMarketCap, this.selectedCategorySorter, this.selectedTrSorter, this.selectedPowerConsumptionSorter, this.selectedPriceSorter, this.selectedMarketSorter)
   }
 }

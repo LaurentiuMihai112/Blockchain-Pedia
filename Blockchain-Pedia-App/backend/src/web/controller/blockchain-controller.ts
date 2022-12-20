@@ -10,13 +10,12 @@ import {NumericSpec} from "../../filter/impl/numeric-spec";
 import {BlockchainModel} from "../../model/blockchain-model";
 import {CategorySpec} from "../../filter/impl/category-spec";
 import {BlockchainCategory} from "../../model/enum/blockchain-category";
-import deepcopy from "deepcopy";
 
 export class BlockchainController {
 
     public static getAllBlockchains = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
         const {sortBy, order, min, max, filterBy} = req.query;
-        let blockchains: BlockchainModel[] = [];
+        let blockchains;
 
         if (filterBy && (!min || !max)) {
             res.status(400).send("Missing specification for filter.")
@@ -24,13 +23,19 @@ export class BlockchainController {
         }
         try {
             let blockchainsList = await BlockchainService.findAll();
-            blockchains = deepcopy(blockchainsList);
-            console.log("______________VALUES_____________")
-            for (const blockchain of blockchains) {
-                console.log(blockchain.pricePerTransaction)
+            // for (const blockchain of blockchainsList) {
+            //     blockchains.push(structuredClone(blockchain))
+            // }
+            blockchains = BlockchainService.copyList(blockchainsList)
+            console.log("______________VALUES_____________\n")
+            console.log(blockchainsList[1])
+            console.log(blockchains[1])
+            for (let i = 0; i < blockchains.length; i++) {
+                console.log(blockchains[i].name + '\n')
             }
         } catch (error) {
             console.log("Error***********\n")
+            console.dir(error)
             res.status(500).send("Error while fetching blockchains");
             return;
         }

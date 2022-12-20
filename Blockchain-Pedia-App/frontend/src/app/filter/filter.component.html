@@ -1,9 +1,9 @@
 <div class="flex flex-row gap-3 px-1 filter">
   <!--  Category-->
-  <div class="relativ flex justify-center items-center bg-red-200 rounded ">
+  <div class="relativ flex justify-center items-center bg-blue-300 rounded ">
     <div
       (click)="this.filterService.toggleCategorySorter()"
-      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
+      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-blue-900 bg-blue-300 uppercase last:mr-0 mr-1">
       Category
     </div>
     <div>
@@ -21,7 +21,7 @@
       </svg>
     </div>
     <div *ngIf="this.filterService.showCategoriesSorter"
-         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
+         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-blue-900 bg-blue-300 uppercase ">
       <div (click)="this.filterService.selectCategorySorter(category)"
            *ngFor="let category of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
@@ -58,10 +58,10 @@
     </div>
   </div>
   <!--  Transaction count-->
-  <div class="relative flex justify-center items-center bg-red-200 rounded ">
+  <div class="relative flex justify-center items-center bg-blue-300 rounded ">
     <div
       (click)="this.filterService.toggleTrSorter()"
-      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
+      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-blue-900 bg-blue-300 uppercase last:mr-0 mr-1">
       Transaction count
     </div>
     <div>
@@ -77,7 +77,7 @@
       </svg>
     </div>
     <div *ngIf="this.filterService.showTrSorter"
-         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
+         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-blue-900 bg-blue-300 uppercase ">
       <div (click)="this.filterService.selectTrSorter(trSorter)"
            *ngFor="let trSorter of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
@@ -115,10 +115,10 @@
     </div>
   </div>
   <!--  Power Consumption-->
-  <div class="relativ flex justify-center items-center bg-red-200 rounded ">
+  <div class="relativ flex justify-center items-center bg-blue-300 rounded ">
     <div
       (click)="this.filterService.togglePowerSorter()"
-      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
+      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-blue-900 bg-blue-300 uppercase last:mr-0 mr-1">
       Power Consumption
     </div>
     <div>
@@ -134,7 +134,7 @@
       </svg>
     </div>
     <div *ngIf="this.filterService.showPowerSorter"
-         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
+         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-blue-900 bg-blue-300 uppercase ">
       <div (click)="this.filterService.selectPowerSorter(powerConsumptionSorting)"
            *ngFor="let powerConsumptionSorting of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
@@ -174,10 +174,10 @@
     </div>
   </div>
   <!--  Price / Transaction-->
-  <div class="relativ flex justify-center items-center bg-red-200 rounded ">
+  <div class="relativ flex justify-center items-center bg-blue-300 rounded ">
     <div
       (click)="this.filterService.togglePriceSorter()"
-      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
+      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-blue-900 bg-blue-300 uppercase last:mr-0 mr-1">
       Price Transaction
     </div>
     <div>
@@ -193,7 +193,7 @@
       </svg>
     </div>
     <div *ngIf="this.filterService.showPriceSorter"
-         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
+         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-blue-900 bg-blue-300 uppercase ">
       <div (click)="this.filterService.selectPriceSorter(price)" *ngFor="let price of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
         {{ price }}
@@ -230,10 +230,10 @@
     </div>
   </div>
   <!--  Market Cap-->
-  <div class="relativ flex justify-center items-center bg-red-200 rounded ">
+  <div class="relativ flex justify-center items-center bg-blue-300 rounded ">
     <div
       (click)="this.filterService.toggleMarketSorter()"
-      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-red-900 bg-red-200 uppercase last:mr-0 mr-1">
+      class="flex text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-blue-900 bg-blue-300 uppercase last:mr-0 mr-1">
       Market Cap
     </div>
     <div>
@@ -249,7 +249,7 @@
       </svg>
     </div>
     <div *ngIf="this.filterService.showMarketSorter"
-         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-red-900 bg-red-200 uppercase ">
+         class="absolute w-fit mt-32 py-1 border border-5 border-neutral-200 rounded-md cursor-pointer z-50 text-blue-900 bg-blue-300 uppercase ">
       <div (click)="this.filterService.selectMarketSorter(market)"
            *ngFor="let market of this.filterService.sorterCategory"
            class="py-2 px-4 w-full hover:bg-neutral-100">
@@ -288,7 +288,12 @@
   </div>
   <button
     (click)="this.filterService.updateBlockchainList(this.filterService.selectedCategory,this.filterService.selectedTrCount,this.filterService.selectedPowerConsumption,this.filterService.selectedPricePerTr,this.filterService.selectedMarketCap, this.filterService.selectedCategorySorter,this.filterService.selectedTrSorter, this.filterService.selectedPowerConsumptionSorter,this.filterService.selectedPriceSorter,this.filterService.selectedMarketSorter)"
-    class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+    class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded">
     Apply Filters
+  </button>
+  <button
+    (click)="this.filterService.clear()"
+    class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded">
+    Clear Filters
   </button>
 </div>
