@@ -1,5 +1,7 @@
 # Blockchain-Pedia
 
+Documentation can be found [HERE](https://docs.google.com/document/d/14_rnE8nKfXMyj6w1RhDL8m_orZ3cwzMzS9SQdv4lV0s/edit)
+
 State of the Art can be found [HERE](https://docs.google.com/document/d/1a5bd_QrEQi9IooDOwWSxUzOzHLbgofyCUUbkv7_vVBo/edit#heading=h.bbaa7759cydt).
 
 Class Diagram can be found [HERE](./docs/class-diagram.png).
