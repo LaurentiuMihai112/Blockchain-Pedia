@@ -5,7 +5,7 @@ export class Routes {
   static readonly CHARTS_FILTER_ENDPOINT = "charts/filter"
   static readonly CHARTS_ORDER_ENDPOINT = "charts/order"
   static readonly CHARTS_FILE_ENDPOINT = "charts"
-  private static readonly HOST = "http://127.0.0.1:8000/";
+  private static readonly HOST = "https://blockchainpediabe.onrender.com/";
 
   static makePath(endpointPath: string) {
     return this.HOST + endpointPath;
