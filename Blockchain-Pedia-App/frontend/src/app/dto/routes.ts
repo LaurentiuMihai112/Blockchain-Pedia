@@ -5,7 +5,7 @@ export class Routes {
   static readonly CHARTS_FILTER_ENDPOINT = "charts/filter"
   static readonly CHARTS_ORDER_ENDPOINT = "charts/order"
   static readonly CHARTS_FILE_ENDPOINT = "charts"
-  private static readonly HOST = "http://3.71.102.109:8000/";
+  private static readonly HOST = "http://3.123.21.62:8000/";
 
   static makePath(endpointPath: string) {
     return this.HOST + endpointPath;
