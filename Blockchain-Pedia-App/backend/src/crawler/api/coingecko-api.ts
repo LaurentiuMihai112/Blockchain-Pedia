@@ -7,7 +7,13 @@ export class CoinGeckoApi {
 
     public async getCoinCurrentData(coinId: string): Promise<HttpJsonResponse> {
         let url = `${CoinGeckoApi.API_BASE_URL}${CoinGeckoApi.API_COIN_CURRENT_DATA}${coinId}`
-        return await Http.performGet(url)
+        let response = await Http.performGet(url)
+
+        if(response != undefined && response.statusCode == 429) {
+            return this.getCoinCurrentData(coinId)
+        }
+
+        return response
     }
 
     public async timeout(delayTime: number) {

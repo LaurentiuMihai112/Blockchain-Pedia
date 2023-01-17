@@ -1,7 +1,7 @@
 import {BlockchainModel} from "../model/blockchain-model";
 
 export abstract class WebCrawler {
-    public static delayTime: number = 10000
+    public static delayTime: number = 30000
 
     abstract crawl(): Promise<BlockchainModel>
 
