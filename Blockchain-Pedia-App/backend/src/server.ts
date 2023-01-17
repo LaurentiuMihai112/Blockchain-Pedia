@@ -14,7 +14,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:4200'
+    origin: 'http://blockchainpedia-frontend.s3.eu-central-1.amazonaws.com'
 }));
 app.set('json spaces', 4);
 
