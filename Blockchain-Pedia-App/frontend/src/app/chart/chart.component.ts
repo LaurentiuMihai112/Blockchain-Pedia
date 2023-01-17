@@ -26,9 +26,9 @@ export class ChartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private getSortChartImage() {
+  private async getSortChartImage() {
     let imageName = ""
-    axios.get(Routes.makePath(Routes.CHARTS_SORT_ENDPOINT), this.config)
+    await axios.get(Routes.makePath(Routes.CHARTS_SORT_ENDPOINT), this.config)
       .then(response => {
         imageName = response.data
       })
@@ -39,9 +39,9 @@ export class ChartComponent implements OnInit {
     this.sortChartImage = Routes.makePath(Routes.CHARTS_FILE_ENDPOINT + "?name=" + imageName)
   }
 
-  private getOrderChartImage() {
+  private async getOrderChartImage() {
     let imageName = ""
-    axios.get(Routes.makePath(Routes.CHARTS_ORDER_ENDPOINT), this.config)
+    await axios.get(Routes.makePath(Routes.CHARTS_ORDER_ENDPOINT), this.config)
       .then(response => {
         imageName = response.data
       })
@@ -52,9 +52,9 @@ export class ChartComponent implements OnInit {
     this.orderChartImage = Routes.makePath(Routes.CHARTS_FILE_ENDPOINT + "?name=" + imageName)
   }
 
-  private getFilterChartImage() {
+  private async getFilterChartImage() {
     let imageName = ""
-    axios.get(Routes.makePath(Routes.CHARTS_FILTER_ENDPOINT), this.config)
+    await axios.get(Routes.makePath(Routes.CHARTS_FILTER_ENDPOINT), this.config)
       .then(response => {
         imageName = response.data
       })

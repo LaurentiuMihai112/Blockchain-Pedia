@@ -5,7 +5,12 @@ import {ChartTypeRegistry} from "chart.js";
 const width = 300; //px
 const height = 300; //px
 const backgroundColour = 'white';
-const chartJSNodeCanvas = new ChartJSNodeCanvas({width, height, backgroundColour});
+const chartJSNodeCanvas = new ChartJSNodeCanvas({width, height, backgroundColour, chartCallback: (ChartJS) => {
+        // Just example usage
+        ChartJS.defaults.font.family = 'Comic Sans';
+    } });
+chartJSNodeCanvas.registerFont('/home/ec2-user/Blockchain-Pedia/Blockchain-Pedia-App/backend/arial.ttf', {family: 'Arial'})
+
 
 export class DataChartService {
     private static _configuration = {};
@@ -16,7 +21,15 @@ export class DataChartService {
         let lines = data.split("\n")
         lines = lines.filter(line => line.includes("REQUEST"))
             .map(line => line.split("\r")[0])
-        lines = lines.map(line => line.split("GET")[1].trim())
+        lines = lines.map(line => {
+            let arg = line.split("GET")
+            if(arg.length < 2){
+                return ""
+            }
+
+            return arg[1].trim()
+        })
+        lines = lines.filter(line => line != "")
         lines = lines.map(line => line.split("?")[1])
 
         let queryParams = lines

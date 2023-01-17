@@ -277,7 +277,7 @@ export class FilterService {
     this._sorterCategory = value;
   }
 
-  private _categories = ['Any', 'Public', 'Hybrid', 'Private']
+  private _categories = ['Any', 'PUBLIC', 'HYBRID', 'PRIVATE']
 
   get categories(): string[] {
     return this._categories;
@@ -430,11 +430,11 @@ export class FilterService {
   public formatCategory(category: BlockchainCategory) {
     switch (category) {
       case BlockchainCategory.HYBRID:
-        return "Hybrid"
+        return "HYBRID"
       case BlockchainCategory.PRIVATE:
-        return "Private"
+        return "PRIVATE"
       case BlockchainCategory.PUBLIC:
-        return "Public"
+        return "PUBLIC"
     }
   }
 
@@ -576,8 +576,8 @@ export class FilterService {
 
   extractMinAndMax(str: string, field: string) {
     if (field == "category") {
-      if (str == "Public") this._minimumValue = String(-3)
-      else if (str == "Private") this._minimumValue = String(-2)
+      if (str == "PUBLIC") this._minimumValue = String(-3)
+      else if (str == "PRIVATE") this._minimumValue = String(-2)
       else this._minimumValue = String(-1)
       this._maximumValue = this._maxFilterValue.toString()
     } else {
